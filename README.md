@@ -34,7 +34,7 @@ The basic building blocks of music, designed to be notationally agnostic.
 There is much room for debate and innovation in regards to the organization of the model of a work. Many notation systems couple notational aspects with the musical model at this stage. But, as a primary feature of this program is to display many different graphical representations of the same musical model, this must be decoupled.
 
 #### Elements
-Some basical elemental aspects of the musical model need to be developed refined.
+Some basical elemental aspects of the musical model need to be developed and refined.
 - Rhythm model
   - Hierarchical model, while preserving an immutable and value-type semantic
 - Graphical notation model
