@@ -56,6 +56,10 @@ Many musical aspects may have a pipeline of intermediate, incrementally semantic
   - `DynamicMarking` (`fff`)
   - `DynamicMarkingStratum` (`fff > ppp < mf — ø (sub.)`)
   - `DynamicMarkingStratumSegment` (`[[fff > (ppp)],[(fff)> ppp < mf],[(mf)— ø (sub.)]]`) 
+- Rhythm model
+  - Rhythm trees
+  - Beaming model
+  - Graphical beam representation
 
 ### Notational rendering
 - Slurs
