@@ -53,11 +53,16 @@ Many musical aspects may have a pipeline of intermediate, incrementally semantic
   - `StaffRepresentablePitchContext` (`A natural, half-harmonic`)
   - `StaffRepresentedPitchContext` (`A natural, half-harmonic, placed on top line of bass clef`)
 - Dynamics model
-  - `DynamicMarking`
-  - `DynamicMarkingStratum`
-  - ``
-
-### Graphical models
-
+  - `DynamicMarking` (`fff`)
+  - `DynamicMarkingStratum` (`fff > ppp < mf — ø (sub.)`)
+  - `DynamicMarkingStratumSegment` (`[[fff > (ppp)],[(fff)> ppp < mf],[(mf)— ø (sub.)]]`) 
 
 ### Notational rendering
+- Slurs
+- Glyphs
+- Import fonts, allow SVG conversion?
+
+### Graphical models
+- Layout
+- Spanner management
+- Score graphical model
