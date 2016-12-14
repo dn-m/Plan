@@ -82,3 +82,4 @@ We need to do certain things to ensure the health of the project.
   - We have scripts that merge documentation for all of the different repositories into a single site.
   - The current implementation of this is brittle and has many implicit dependencies.
   - We must refactor this to be useable by multiple developers.
+  - Further, we should add a script phase to be performed after a successful `Travis CI` build on any `master` branch, to re-generate the documentation for the project.
