@@ -37,7 +37,7 @@ There is much room for debate and innovation in regards to the organization of t
 Some basic elemental aspects of the musical model have been developed.
 - [Pitch model](https://github.com/dn-m/Pitch)
 
-Some basic elemental aspects of the musical model need to be developed and refined.
+Some basic elemental aspects of the musical model need to be developed and/or refined.
 - Rhythm model
   - Hierarchical model, while preserving an immutable and value-type semantic
 - Graphical notation model
