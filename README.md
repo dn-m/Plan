@@ -5,5 +5,13 @@ Repository for planning the development of the dn-m project.
 **dn-m** will be a music notation renderer for the iPad, tailored to the needs of performers of contemporary music. 
 
 ## User stories
-- A composer can utilize graphical notation, with an musical underlying model
-- A performer can specify exactly which musical attributes they see of their own and other player's music
+
+### Composers
+- Composers can utilize graphical notation, with an intelligent underlying model
+- Composers can write in a concise textual language for rapid development of scores
+- Composers can update the contents of a score that are immediately accessible by a performer
+
+### Performers
+- Performers can specify exactly which musical attributes they see of their own and other player's music
+- Performers can use built-in rehearsal tools (such as metronomes knowledgable of the musical material)
+- Performers can have a more direct relationship to the activation of electronic musical elements
