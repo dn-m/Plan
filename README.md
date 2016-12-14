@@ -40,5 +40,24 @@ Some basic elemental aspects of the musical model have been developed.
 Some basic elemental aspects of the musical model need to be developed and/or refined.
 - Rhythm model
   - Hierarchical model, while preserving an immutable and value-type semantic
+- [Dynamics model](https://github.com/dn-m/Dynamics/tree/master/Dynamics)
 - Graphical notation model
   - This will need to be very flexible, but still structured
+
+### Pre-notational representations
+Many musical aspects may have a pipeline of intermediate, incrementally semantically rich representations.
+
+- Pitch model
+  - `Pitch` (`MIDI: 57`), (`Frequency: 440`) 
+  - `SpelledPitch` (`A natural`) 
+  - `StaffRepresentablePitchContext` (`A natural, half-harmonic`)
+  - `StaffRepresentedPitchContext` (`A natural, half-harmonic, placed on top line of bass clef`)
+- Dynamics model
+  - `DynamicMarking`
+  - `DynamicMarkingStratum`
+  - ``
+
+### Graphical models
+
+
+### Notational rendering
