@@ -1,5 +1,5 @@
 # Plan
-Repository for planning the development of the dn-m project.
+Repository for planning the development of the **dn-m** project.
 
 ## Background
 **dn-m** will be a music notation renderer for the iPad, tailored to the needs of performers of contemporary music. 
