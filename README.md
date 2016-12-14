@@ -35,6 +35,7 @@ There is much room for debate and innovation in regards to the organization of t
 
 #### Elements
 Some basical elemental aspects of the musical model need to be refined.
-- Rhythm
+- Rhythm model
   - Hierarchical model, while preserving an immutable and value-type semantic
-- Graphical notations
+- Graphical notation model
+  - This will need to be very flexible, but still structured
