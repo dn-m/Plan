@@ -7,9 +7,9 @@ Repository for planning the development of the dn-m project.
 ## User stories
 
 ### Composers
-- Composers can utilize graphical notation, with an intelligent underlying model
+- Composers can utilize an intelligently modelled graphical notation
 - Composers can write in a concise textual language for rapid development of scores
-- Composers can update the contents of a score that are immediately accessible by a performer
+- Composers can update the contents of a score, with the changes immediately accessible by a performer
 
 ### Performers
 - Performers can specify exactly which musical attributes they see of their own and other player's music
