@@ -24,7 +24,7 @@ Repository for planning the development of the **dn-m** project.
 - Performers can have a more direct relationship to the activation of electronic musical elements
   - Interact with score following software
 
-## Upcoming work
+## Feature development
 Quite a bit of work remains to be done. Much can be extracted and refined from this [repository](https://github.com/dn-m/Archive/tree/master/DNM-old).
 
 ### Musical model
@@ -66,3 +66,18 @@ Many musical aspects may have a pipeline of intermediate, incrementally semantic
 - Layout
 - Spanner management
 - Score graphical model
+
+## Project management
+This project has been designed to be quite modular. There are many benefits to this project architecture, but it comes with inherent costs of maintainance.
+
+We need to do certain things to ensure the health of the project.
+
+- Testing
+  - We use [Travis CI](https://travis-ci.org/dn-m/) to automatically run tests for each framework.
+  - There are some strange issues with code-signing, where half of the builds fail for no logical reason.
+  
+- Documentation
+  - We use [jazzy](https://github.com/realm/jazzy) to automatically generate [documentation](http://dn-m.github.io/) from source code.
+  - We have scripts that merge documentation for all of the different repositories into a single site.
+  - The current implementation of this is brittle and has many implicit dependencies.
+  - We must refactor this to be useable by multiple developers.
