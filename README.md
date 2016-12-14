@@ -74,7 +74,8 @@ We need to do certain things to ensure the health of the project.
 
 - Testing
   - We use [Travis CI](https://travis-ci.org/dn-m/) to automatically run tests for each framework.
-  - There are some strange issues with code-signing, where half of the builds fail for no logical reason.
+  - There is a strange issue with code-signing, where half of the builds fail for no logical reason.
+  - We are tracking this issue [here](https://github.com/orgs/dn-m/projects/2)
   
 - Documentation
   - We use [jazzy](https://github.com/realm/jazzy) to automatically generate [documentation](http://dn-m.github.io/) from source code.
