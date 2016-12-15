@@ -14,7 +14,7 @@ Repository for planning the development of the **dn-m** project.
 - Composers can update the contents of a score, with the changes immediately accessible by a performer
 
 ### Performers
-- Performers can specify exactly which musical attributes they see of their own and other player's music
+- Performers can specify exactly which musical attributes they see of their own and other players' music
   - Play from a full score
   - Display only the dynamics and rhythms of one other part
   - Display only the other players' parts, with your part memorized
