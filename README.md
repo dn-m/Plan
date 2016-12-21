@@ -24,8 +24,24 @@ Repository for planning the development of the **dn-m** project.
 - Performers can have a more direct relationship to the activation of electronic musical elements
   - Interact with score following software
 
+## Software architecture 
+
+There are four stages primary stages through which a musical element may go before being drawn on the screen:
+  1. Model (most basic elements, representation-agnostic)
+  2. Abstract Representation Model (position- and dimension-agnostic)
+  3. Renderable Representation Model
+  4. Rendered Element
+  
+For example, in the pitch domain, we shall see:
+  1. `Pitch`
+  2. `SpelledPitch`
+  3. `StaffRepresentablePitchContext`
+  4. `Notehead` / `Accidental`
+
 ## Feature development
 Quite a bit of work remains to be done. Much can be extracted and refined from this [repository](https://github.com/dn-m/Archive/tree/master/DNM-old).
+
+
 
 ### Musical model
 The basic building blocks of music, designed to be notationally agnostic. 
