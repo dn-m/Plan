@@ -28,9 +28,9 @@ Repository for planning the development of the **dn-m** project.
 
 There are four stages primary stages through which a musical element may go before being drawn on the screen:
   1. **Model** (most basic elements, representation-agnostic)
-  2. **Abstract Representation Model** (position- and dimension-agnostic)
-  3. **Renderable Representation Model**
-  4. **Rendered Element**
+  2. **Abstract Representation Model** (position- and dimension-agnostic, wraps **Model**)
+  3. **Renderable Representation Model** (wraps **Abstract Representation Model**)
+  4. **Rendered Element** (wraps **Renderable Representation Model**)
   
 For example, in the pitch domain, we shall see:
   1. `Pitch`
