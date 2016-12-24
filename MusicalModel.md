@@ -47,7 +47,7 @@ struct Event {
 
 ## Rhythm Model
 
-The elements above will need to be contextualized in some temporal model. Commonly in western notated music, we use a hierarchical division of time often called _rhythm_.
+The elements above will need to be contextualized within some temporal model. Commonly in western notated music, we use a hierarchical division of time often called _rhythm_.
 
 We can call the most basic element of _rhythm_ a `MetricalDuration`, with an abbreviated example:
 
