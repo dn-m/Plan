@@ -141,13 +141,14 @@ let dottedEighth = MetricalDuration(3,16)
 // events
 let middleCEvent = TieOrNote.note(RestOrEvent.event(middleC))
 let tiedEvent = TieOrNote<RestOrEvent<Pitch>>.tie
-let restEvent: TieOrNote.note(RestOrEvent<Pitch>.rest)
+let restEvent = TieOrNote.note(RestOrEvent<Pitch>.rest)
 
 // events in durational context
 let middleCDurationalEvent = ContextualizedMetricalDuration(duration: eighth, value: middleCEvent)
 let tiedDurationalEvent = ContextualizedMetricalDuration(duration: dottedEighth, value: tiedEvent)
 let restDurationalEvent: ContextualizedMetricalDuration(duration: eighth, value: restEvent)
 
+// The rhythm!
 let rt = RhythmTree.branch([
     .leaf(middleCDurationEvent),
     .leaf(tiedDurationalEvent),
