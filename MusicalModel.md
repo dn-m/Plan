@@ -151,9 +151,21 @@ let restDurationalEvent: ContextualizedMetricalDuration(duration: eighth, value:
 // The rhythm with a note, tie, and a rest: 
 // 2-3  2 
 // c    r
-let rt = RhythmTree.branch([
+let pitchTree = RhythmTree.branch([
     .leaf(middleCDurationEvent),
     .leaf(tiedDurationalEvent),
     .leaf(restDurationalEvent)
 ])
+
+// Because `RhythmTree` is still parameterized over `T`, as is `ContextualizedMetricalDuration` we can also use it to store richer `Event` values. We can quickly lift the durational events from before, into a context of performers and instruments.
+
+let events: [Event] = [middleCEvent, tiedEvent, restEvent].map { durationalEvent in
+    Event(
+        performerIdentifier: "X",
+        instrumentIdentifier: "Y",
+        value: durationalEvent
+    )
+}
+
+> This might compile as is, but we might need to be specify the generic parameters in the type definition of `events: [Event]`.
 ```
