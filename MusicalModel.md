@@ -173,8 +173,6 @@ let events: [Event] = [middleCEvent, tiedEvent, restEvent].map { durationalEvent
 Then, we can build a new tree with a richer definition:
 
 ```Swift
-
-```
 let performableTree = RhythmTree.branch(
     events.map { RhythmTree.leaf($0) }
 )
