@@ -156,9 +156,11 @@ let pitchTree = RhythmTree.branch([
     .leaf(tiedDurationalEvent),
     .leaf(restDurationalEvent)
 ])
+```
 
-// Because `RhythmTree` is still parameterized over `T`, as is `ContextualizedMetricalDuration` we can also use it to store richer `Event` values. We can quickly lift the durational events from before, into a context of performers and instruments.
+> Because `RhythmTree` is still parameterized over `T`, as is `ContextualizedMetricalDuration` we can also use it to store richer `Event` values. We can quickly lift the durational events from before, into a context of performers and instruments.
 
+```Swift
 let events: [Event] = [middleCEvent, tiedEvent, restEvent].map { durationalEvent in
     Event(
         performerIdentifier: "X",
