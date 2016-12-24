@@ -49,6 +49,8 @@ struct Event {
 
 The elements above will need to be contextualized within some temporal model. Commonly in western notated music, we use a hierarchical division of time often called _rhythm_.
 
+### Rhythm in abstract
+
 We can call the most basic element of _rhythm_ a `MetricalDuration`, with an abbreviated example:
 
 ```Swift
@@ -67,16 +69,18 @@ enum TieOrNote <T> {
 }
 ```
 
+### Placing events in durational context
+
 In the most abstract contexts, we don't need to know if there are rests or proper events. In the more practical example of notated music, we can either do something at given metrical duration offset, or not:
 
 ```Swift
-enum EventOrRest <T> {
+enum RestOrEvent <T> {
     case rest
     case event(T)
 }
 ```
 
-> Both `EventOrRest<T>` and `TieOrNote<T>` are essentially the `Optional` monad. 
+> Both `RestOrEvent<T>` and `TieOrNote<T>` are essentially the `Optional` monad. 
 >
 > We can discuss the desirability of using more domain-specific definitions of these types or the (initial) elegance of `T?`.
 
@@ -102,3 +106,24 @@ let durationalEvent = ContextualizedMetricalDuration {
 ```
 
 > This is, of course, getting pretty verbose. However, the composer-user would not be writing this code directly, but instead of through a higher-efficiency language.
+
+### Rhythm trees
+
+Now, let's contextualize the durational events in richer context.
+
+We will use this definition of a `Tree`:
+
+```Swift
+enum Tree <T> {
+    case leaf(T)
+    indirect case branch([Tree])
+}
+```
+
+We will specialize this a bit as:
+
+```Swift
+typealias RhythmTree<T> = Tree<ContextualizedMetricalDuration<RestOrEvent<T>>
+```
+
+That is, each `leaf` node will hold a `ContextualizedMetricalDuration`, which will in turn hold onto (tie, (rest | event)) structures.
