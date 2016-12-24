@@ -61,7 +61,7 @@ struct MetricalDuration {
 To put this in this in a richer abstract representation, we need to extend certain rhythms to make compound rhythmical events. We can either provide a "tie" to the previous event, or provide a new _something_.
 
 ```Swift
-enum ExtensionKind <T> {
+enum TieOrNote <T> {
     case extending
     case note(T)
 }
@@ -76,6 +76,10 @@ enum EventOrRest <T> {
 }
 ```
 
+> Both `EventOrRest<T>` and `TieOrNote<T>` are essentially the `Optional` monad. 
+>
+> We can discuss the desirability of using more domain-specific definitions of these types or the (initial) elegance of `T?`.
+
 We can wrap all of this together:
 
 ```Swift
@@ -85,3 +89,16 @@ struct ContextualizedMetricalDuration <T> {
 }
 ```
 
+In a more concretely musical context, we may instantiate one of these as:
+
+```Swift
+let eighth = MetricalDuration(1,8)
+let middleC = Pitch(60)
+
+let durationalEvent = ContextualizedMetricalDuration {
+    metricalDuration: eighth,
+    value: TieOrNote.note(EventOrRest.event(middleC))
+}
+```
+
+> This is, of course, getting pretty verbose. However, the composer-user would not be writing this code directly, but instead of through a higher-efficiency language.
