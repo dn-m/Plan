@@ -166,6 +166,18 @@ let events: [Event] = [middleCEvent, tiedEvent, restEvent].map { durationalEvent
         value: durationalEvent
     )
 }
+```
 
 > This might compile as is, but we might need to be specify the generic parameters in the type definition of `events: [Event]`.
+
+Then, we can build a new tree with a richer definition:
+
+```Swift
+
 ```
+let performableTree = RhythmTree.branch(
+    events.map { RhythmTree.leaf($0) }
+)
+```
+
+> Again, we might need to be more specific re: types.
