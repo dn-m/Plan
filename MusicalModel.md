@@ -1,0 +1,87 @@
+# Musical Model
+
+## Elements
+
+The most basic musical attributes, from `Pitch` to `Articulation` to `DynamicMarking` to `OSCMessage` values.
+
+Some abbreviated examples:
+
+```Swift
+struct Pitch {
+    let value: Float
+}
+
+struct Articulation: OptionSetType {
+    let accent: ...
+    let staccato: ...
+    let tenuto: ...
+    ...
+}
+
+struct DynamicMarking {
+
+    enum Element {
+        case p,f,o,m,s,z
+    }
+
+    let elements: [Element]
+}
+
+struct OSCMessage {
+    let addressPattern: String
+    let arguments: [String]
+}
+```
+
+These can be contextualized with the performer and instrument to which these elements apply:
+
+```Swift
+struct Event {
+    let performerIdentifier: String
+    let instrumentIdentifier: String
+    let elements: [Any] // defined above
+}
+```
+
+
+
+## Rhythm Model
+
+The elements above will need to be contextualized in some temporal model. Commonly in western notated music, we use a hierarchical division of time often called _rhythm_.
+
+We can call the most basic element of _rhythm_ a `MetricalDuration`, with an abbreviated example:
+
+```Swift
+struct MetricalDuration {
+    let beats: Int
+    let subdivision: Int
+}
+```
+
+To put this in this in a richer abstract representation, we need to extend certain rhythms to make compound rhythmical events. We can either provide a "tie" to the previous event, or provide a new _something_.
+
+```Swift
+enum ExtensionKind <T> {
+    case extending
+    case note(T)
+}
+```
+
+In the most abstract contexts, we don't need to know if there are rests or proper events. In the more practical example of notated music, we can either do something at given metrical duration offset, or not:
+
+```Swift
+enum EventOrRest <T> {
+    case rest
+    case event(T)
+}
+```
+
+We can wrap all of this together:
+
+```Swift
+struct ContextualizedMetricalDuration <T> {
+    let metricalDuration: MetricalDuration
+    let value: T
+}
+```
+
