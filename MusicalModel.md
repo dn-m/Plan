@@ -148,7 +148,7 @@ let middleCDurationalEvent = ContextualizedMetricalDuration(duration: eighth, va
 let tiedDurationalEvent = ContextualizedMetricalDuration(duration: dottedEighth, value: tiedEvent)
 let restDurationalEvent: ContextualizedMetricalDuration(duration: eighth, value: restEvent)
 
-// The rhythm!
+// The rhythm with a note, tie, and a rest: 2-3(middle-c) 2(rest)
 let rt = RhythmTree.branch([
     .leaf(middleCDurationEvent),
     .leaf(tiedDurationalEvent),
