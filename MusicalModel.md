@@ -126,4 +126,4 @@ We will specialize this a bit as:
 typealias RhythmTree<T> = Tree<ContextualizedMetricalDuration<RestOrEvent<T>>
 ```
 
-That is, each `leaf` node will hold a `ContextualizedMetricalDuration`, which will in turn hold onto (tie, (rest | event)) structures.
+That is, each `leaf` node will hold a `ContextualizedMetricalDuration`, which will in turn hold onto `(tie | (rest | event))` structures.
