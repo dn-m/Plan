@@ -43,7 +43,7 @@ struct Event {
 }
 ```
 
-
+We can leave `Event.elements` declared as an `Array` of `Any` values. In that case, anything can be passed in here, then we will just destructure the type as is necessary on the backend.
 
 ## Rhythm Model
 
