@@ -64,7 +64,7 @@ To put this in this in a richer abstract representation, we need to extend certa
 
 ```Swift
 enum TieOrNote <T> {
-    case extending
+    case tie
     case note(T)
 }
 ```
@@ -105,7 +105,9 @@ let durationalEvent = ContextualizedMetricalDuration {
 }
 ```
 
-> This is, of course, getting pretty verbose. However, the composer-user would not be writing this code directly, but instead of through a higher-efficiency language.
+> This is, of course, getting pretty verbose. 
+>
+> However, the composer-user would not be writing this code directly, instead through a higher-efficiency language.
 
 ### Rhythm trees
 
@@ -127,3 +129,28 @@ typealias RhythmTree<T> = Tree<ContextualizedMetricalDuration<RestOrEvent<T>>
 ```
 
 Each `leaf` node will hold a `ContextualizedMetricalDuration`, which will in turn hold onto `(tie | (rest | event))` structures.
+
+Let's build a boring rhythm tree:
+
+```Swift
+
+// durations
+let eighth = MetricalDuration(1,8)
+let dottedEighth = MetricalDuration(3,16)
+
+// events
+let middleCEvent = TieOrNote.note(RestOrEvent.event(middleC))
+let tiedEvent = TieOrNote<RestOrEvent<Pitch>>.tie
+let restEvent: TieOrNote.note(RestOrEvent<Pitch>.rest)
+
+// events in durational context
+let middleCDurationalEvent = ContextualizedMetricalDuration(duration: eighth, value: middleCEvent)
+let tiedDurationalEvent = ContextualizedMetricalDuration(duration: dottedEighth, value: tiedEvent)
+let restDurationalEvent: ContextualizedMetricalDuration(duration: eighth, value: restEvent)
+
+let rt = RhythmTree.branch([
+    .leaf(middleCDurationEvent),
+    .leaf(tiedDurationalEvent),
+    .leaf(restDurationalEvent)
+])
+```
