@@ -1,6 +1,25 @@
 # Architecture
 
-Notes on the architecture of **dn-m**.
+## Example API
+
+```Swift
+struct ScoreModel {
+	
+}
+```
+
+```Swift
+final class ScoreAnnotationState {
+	var data: [String: String]
+	func writeToDisk() { }
+	func updateFromDisk() { }
+}
+
+struct AnnotatedScoreModel {
+	let scoreModel: ScoreModel
+	let annotationState: ScoreAnnotationState
+}
+```
 
 ![Architecture](img/architecture.png)
 
