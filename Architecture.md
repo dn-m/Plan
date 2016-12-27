@@ -8,9 +8,15 @@ Notes on the architecture of **dn-m**.
 
 ## Input
 
-Several input methods are to be developed:
-- dn-m language
-- MusicXML conversion
+Several input methods are to be developed.
+
+### dn-m language
+
+For the purposes of authoring scores efficiently, a language 
+
+### MusicXML conversion
+
+For the purposes of translating previously authored scores into the dn-m environment, a the [MusicXML](https://github.com/dn-m/MusicXML) framework will convert the abstract musical information from `MusicXML` files to the native `dn-m` `Abstract Musical Model` representation.
 
 ---
 
@@ -20,10 +26,17 @@ Before being represented graphically, the musical information of a score will go
 
 ### Abstract Musical Model
 
-The abstract musical model
+The abstract musical model will hold abstract definitions of musical events, agnostic of graphical representation.
 
-Agnostic to:
-- Graphical representation of any kind
+The current implementation (which can be revised considerably) looks like this:
+
+```Swift
+final class AbstractMusicModel {
+	
+	let measures: [Measure]
+	let events: [ContextualizedEventTree]
+}
+```
 
 ### Intermediate Representations
 
