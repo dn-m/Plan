@@ -12,6 +12,8 @@ Several input methods are to be developed:
 
 ## Static Model
 
+Before being represented graphically, the musical information of a score will go through several internal representations.
+
 ### Abstract Musical Model
 
 Agnostic to:
