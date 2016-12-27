@@ -12,7 +12,9 @@ Several input methods are to be developed.
 
 ### dn-m language
 
-For the purposes of authoring scores efficiently, a language 
+For the purposes of authoring scores efficiently, a language is to be developed.
+
+**TODO**: dn-m language definition page
 
 ### MusicXML conversion
 
