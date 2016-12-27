@@ -13,6 +13,7 @@ struct AnnotatedScoreModel {
 	
 	final class ScoreAnnotationState {
 		var data: [String: String]
+		// ...
 	}
 
 	let scoreModel: ScoreModel
@@ -41,7 +42,8 @@ class ViewController {
 
 	// Reference to score model with added annotations
 	// "Model" in our MVC
-	let annotatedScoreModel: AnnotatedScoreModel
+	let scoreAnnotationState: ScoreAnnotationState
+	let filters: [ScoreFilter]
 
 	// "View" in our MVC
 	let view: View
@@ -49,10 +51,22 @@ class ViewController {
 	// MARK: - UI
 	func didMakeScoreAnnotation(_ annotation: AnnotationType) {
 		annotatedScoreModel.update(...)
+		updateView()
 		updatePersistentAnnotationState()
 	}
 
+	func didApplyFilter(_ filter: ScoreFilter) {
+
+		updateView()
+		updatePersistentFilterState()
+	}
+
 	// MARK: - Rendering
+	func updateView(in range: ScoreRange) { 
+		let scoreSegments = makeScoreSegments(in: range, filters: filters)
+		// layout
+	}
+
 	func makeScoreSegments(in range: ScoreRange) -> [ScoreSegment] { }
 
 	// MARK: - Data access layer
