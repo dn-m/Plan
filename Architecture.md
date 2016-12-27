@@ -9,15 +9,32 @@ struct ScoreModel {
 ```
 
 ```Swift
-final class ScoreAnnotationState {
-	var data: [String: String]
-	func writeToDisk() { }
-	func updateFromDisk() { }
+struct AnnotatedScoreModel {
+	
+	final class ScoreAnnotationState {
+		var data: [String: String]
+	}
+
+	let scoreModel: ScoreModel
+	let state: ScoreAnnotationState
+
+	func update(...) { }
 }
 
-struct AnnotatedScoreModel {
-	let scoreModel: ScoreModel
-	let annotationState: ScoreAnnotationState
+```
+
+```Swift
+class ViewController {
+	let annotatedScoreModel: AnnotatedScoreModel
+
+	func didMakeScoreAnnotatino() {
+		annotatedScoreModel.update()
+	}
+
+	// UI in
+	// Update update annotatedScoreModel
+	// Update persistent artifacts
+	
 }
 ```
 
