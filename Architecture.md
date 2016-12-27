@@ -18,7 +18,7 @@ For the purposes of authoring scores efficiently, a language is to be developed.
 
 ### MusicXML conversion
 
-For the purposes of translating previously authored scores into the dn-m environment, a the [MusicXML](https://github.com/dn-m/MusicXML) framework will convert the abstract musical information from `MusicXML` files to the native `dn-m` `Abstract Musical Model` representation.
+For the purposes of translating previously authored scores into the dn-m environment, the [MusicXML](https://github.com/dn-m/MusicXML) framework will convert the abstract musical information from `MusicXML` files to the native `dn-m` `Abstract Musical Model` representation.
 
 ---
 
