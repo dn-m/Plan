@@ -4,7 +4,7 @@
 
 ```Swift
 struct ScoreModel {
-	
+	// ...
 }
 ```
 
