@@ -2,6 +2,8 @@
 
 Notes on the architecture of **dn-m**.
 
+![Architecture](https://github.com/dn-m/Plan/blob/architecture/img/architecture.png)
+
 ## Input
 
 Several input methods are to be developed:
