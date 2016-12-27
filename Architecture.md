@@ -4,11 +4,15 @@ Notes on the architecture of **dn-m**.
 
 ![Architecture](img/architecture.png)
 
+---
+
 ## Input
 
 Several input methods are to be developed:
 - dn-m language
 - MusicXML conversion
+
+---
 
 ## Static Model
 
@@ -34,7 +38,9 @@ Agnostic to:
 - Score order
 - Splitting up of Spanner types
 
-## Dynamic Model
+---
+
+## Dynamic Generated Representational Model
 
 ### User Configuration
 
