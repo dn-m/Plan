@@ -2,7 +2,7 @@
 
 Notes on the architecture of **dn-m**.
 
-![Architecture](https://github.com/dn-m/Plan/blob/architecture/img/architecture.png)
+![Architecture](img/architecture.png)
 
 ## Input
 
@@ -15,6 +15,8 @@ Several input methods are to be developed:
 Before being represented graphically, the musical information of a score will go through several internal representations.
 
 ### Abstract Musical Model
+
+The abstract musical model
 
 Agnostic to:
 - Graphical representation of any kind
