@@ -24,17 +24,39 @@ struct AnnotatedScoreModel {
 ```
 
 ```Swift
+struct ScoreModelSegment {
+	// Subset of ScoreModel
+	// Manages spanners abstractly
+}
+```
+
+```Swift
+struct RenderableScoreModelSegment {
+	// System model
+}
+```
+
+```Swift
 class ViewController {
+
+	// Reference to score model with added annotations
+	// "Model" in our MVC
 	let annotatedScoreModel: AnnotatedScoreModel
 
-	func didMakeScoreAnnotatino() {
-		annotatedScoreModel.update()
+	// "View" in our MVC
+	let view: View
+
+	// MARK: - UI
+	func didMakeScoreAnnotation(_ annotation: AnnotationType) {
+		annotatedScoreModel.update(...)
+		updatePersistentAnnotationState()
 	}
 
-	// UI in
-	// Update update annotatedScoreModel
-	// Update persistent artifacts
-	
+	// MARK: - Rendering
+	func makeScoreSegments(in range: ScoreRange) -> [ScoreSegment] { }
+
+	// MARK: - Data access layer
+	func updatePersistentAnnotationState() { }
 }
 ```
 
