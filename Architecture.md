@@ -34,7 +34,6 @@ The current implementation (which can be revised considerably) looks like this:
 
 ```Swift
 final class AbstractMusicModel {
-	
 	let measures: [Measure]
 	let events: [ContextualizedEventTree]
 }
