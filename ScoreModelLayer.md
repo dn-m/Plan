@@ -59,12 +59,18 @@ final class ScoreModelLayer {
     		...
     	}
 
+        /// - returns: Copy of `self` with filters applied
     	func filtered(with filters: FilterModel) -> ScoreModelSegment {
     		...
     	}
 
-    	/// - returns: Copy of self with annotations merged
+    	/// - returns: Copy of `self` with annotations added
         func annotated(with annotations: AnnotationModel) -> ScoreModelSegment {
+            ...
+        }
+
+        /// - returns: Copy of `self` with components ordered
+        func ordered(with orderings: OrderingModel) -> ScoreModelSegment {
             ...
         }
     }
@@ -84,12 +90,17 @@ final class ScoreModelLayer {
         }
 
         /// - returns: Subset of `self` in a given range, with the given `annotations` merged.
-        func segment(in range: ScoreRange, annotations: AnnotationModel, filters: FilterModel) 
-        	-> ScoreModelSegment 
+        func segment(
+            in range: ScoreRange, 
+            annotations: AnnotationModel, 
+            filters: FilterModel,
+            orderings: OrderingModel
+        ) -> ScoreModelSegment 
         {
             return segment(in: range)
             	.annotated(with: annotations)
             	.filtered(with: filters)
+                .ordered(with: orderings)
         }
     }
 
@@ -129,10 +140,11 @@ final class ScoreModelLayer {
 
     // MARK: - Instance Properties
 
+    private let dataStore: DataStore
+
     private var filters: FilterModel
     private var annotations: AnnotationModel
     private var orderings: OrderingModel
-    private let dataStore: DataStore
 
     private let scoreModel: ScoreModel 
 
@@ -145,7 +157,12 @@ final class ScoreModelLayer {
     // MARK: - Instance Methods
 
     func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment {
-        return scoreModel.segment(in: range, annotations: annotations, filters: filters)
+        return scoreModel.segment(
+            in: range, 
+            annotations: annotations, 
+            filters: filters
+            orderings: orderings
+        )
     }
 
     // MARK: - Modifying Model
@@ -171,7 +188,7 @@ final class ScoreModelLayer {
     }
 
     func add(_ ordering: Ordering) { 
-        annotations.add(annotation)
+        annotations.add(ordering)
         writeToOrderingDataStore()
     }
 

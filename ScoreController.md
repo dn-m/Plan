@@ -17,6 +17,8 @@ final class ScoreController {
 	
 	// MARK: - Initializers
 
+	init(abstractMusicalModel: AbstractMusicalModel)
+
 	// MARK: - Instance Methods
 }
 ```
