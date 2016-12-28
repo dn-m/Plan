@@ -8,8 +8,6 @@ For example, a performer may select to **filter** out any given attribute of any
 
 The only product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. The objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", but not their horizontal placement.
 
-This product will in turn be transformed into a `System` by the `ScoreViewLayer`, where concrete graphical dimensions are known.
-
 ```Swift
 
 final class ScoreModelLayer {
