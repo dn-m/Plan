@@ -41,11 +41,13 @@ struct RenderableScoreModelSegment {
 class ViewController {
 
 	// MARK: - Model
+
 	let scoreModel: ScoreModel
 	let scoreAnnotationState: ScoreAnnotationState
 	let filters: ScoreFilterState
 
-	// "View" in our MVC
+	// MARK: - View
+
 	let view: View
 
 	// MARK: - UI
