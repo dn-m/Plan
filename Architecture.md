@@ -6,9 +6,9 @@ The model layer encapsulates abstract information of a work of music, as well as
 
 For example, a performer may select to **filter** out any given attribute of any part in the score. Furthermore, they may add a number of different types of **annotations**. The model layer stores these modifications abstractly, and presents an updated model of the score model when needed.
 
-The only product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. That is, the objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", and not their horizontal placement.
+The only product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. The objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", and not their horizontal placement.
 
-This product will in turn be transformed into a `System` by the `ScoreViewLayer`.
+This product will in turn be transformed into a `System` by the `ScoreViewLayer`, where concrete graphical dimensions are known.
 
 ```Swift
 
