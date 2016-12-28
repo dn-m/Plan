@@ -7,8 +7,8 @@ final class ScoreModelLayer {
 
     // MARK: - Nested Types
 
-    /// Abstract representation of graphical objects of a System's worth of music, with management
-    /// of Spanner type objects.
+    /// Abstract representation of graphical objects of a System's worth of music.
+    /// Extends the ScoreModel with a model of managing Spanner type objects over System-breaks.
     /// This is the only public product of the `ScoreModelLayer`.
     struct ScoreModelSegment {
 
