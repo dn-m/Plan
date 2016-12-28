@@ -26,3 +26,60 @@ final class ScoreController {
 ## Pseudo-implementation
 
 **TODO**
+
+```Swift
+final class ScoreController {
+	
+	// MARK: - Nested Types
+	private struct DataStore {
+		func writeToUserInterfaceDataStore()
+		func readFromUserInterfaceDataStore()
+	}
+
+	// Given the available dimensions of the current device and the user interface 
+	// state, prepare the current screen's-worth of music notation.
+	private struct PageLayout {
+
+	}
+
+	// An extension of the `ScoreModelSegment` with positional information
+	private final class SystemModel {
+
+	}
+
+	// At first, proportionate spacing
+	private struct MusicSpacingModel {
+
+	}
+
+	private struct ScoreSelection {
+		let start: Point
+		let end: Point
+	}
+
+	// MARK: - Initializers
+
+	init(abstractMusicalModel: AbstractMusicalModel) { 
+		...
+	}
+
+	// MARK: - UI
+
+	func didMakeAnnotation(_ annotation: ScoreAnnotation)
+	func didMakeFilter(_ filter: ScoreFilter)
+	func didMakeOrdering(_ ordering: ScoreOrdering)
+
+	private func didMakeSelection(start: Point, end: Point) { 
+		// prepare selection type
+	}
+
+	private func scoreRange(from selection: ScoreSelection) { }
+
+
+} 
+```
+
+// DataStore
+// Device state
+// "zoom"-level
+// beat-spacing

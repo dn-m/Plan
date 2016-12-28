@@ -4,7 +4,7 @@ The `ScoreModelLayer` encapsulates abstract information of a work of music, as w
 
 A performer may interact with the semantic construction of a score in three ways:
 
-- **Filter** out attributes of any part
+- **ScoreFilter** out attributes of any part
 - Add a number of different types of **annotations**
 - Redefine the **ordering** of parts
 
@@ -32,12 +32,12 @@ final class ScoreModelLayer {
 	// MARK: - Instance Methods
 
 	func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment
-    func add(_ filter: Filter)
-    func remove(_ filter: Filter)
-    func add(_ annotation: Annotation)
-    func remove(_ annotation: Annotation)
-    func add(_ ordering: Ordering)
-    func remove(_ ordering: Ordering)
+    func add(_ filter: ScoreFilter)
+    func remove(_ filter: ScoreFilter)
+    func add(_ annotation: ScoreAnnotation)
+    func remove(_ annotation: ScoreAnnotation)
+    func add(_ ordering: ScoreOrdering)
+    func remove(_ ordering: ScoreOrdering)
 }
 ```
 
@@ -167,34 +167,40 @@ final class ScoreModelLayer {
 
     // MARK: - Modifying Model
 
-    func add(_ filter: Filter) {
+    func add(_ filter: ScoreFilter) {
         filters.add(filter)
         writeToFilterDataStore()
     }
 
-    func remove(_ filter: Filter) { 
+    func remove(_ filter: ScoreFilter) { 
         filters.remove(filter)
         writeToFilterDataStore()
     }
 
-    func add(_ annotation: Annotation) { 
+    func add(_ annotation: ScoreAnnotation) { 
         annotations.add(annotation)
         writeToAnnotationDataStore()
     }
 
-    func remove(_ annotation: Annotation) { 
+    func remove(_ annotation: ScoreAnnotation) { 
         annotations.remove(annotation)
         writeToAnnotationDataStore()
     }
 
-    func add(_ ordering: Ordering) { 
+    func add(_ ordering: ScoreOrdering) { 
         annotations.add(ordering)
         writeToOrderingDataStore()
     }
 
-    func remove(_ ordering: Ordering) { 
+    func remove(_ ordering: ScoreOrdering) { 
         annotations.remove(ordering)
         writeToOrderingDataStore()
     }
 }
+
+// MARK: - Types
+
+public struct ScoreAnnotation { }
+public struct ScoreFilter { }
+public struct ScoreOrdering { }
 ```
