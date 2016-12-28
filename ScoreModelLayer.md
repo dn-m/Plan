@@ -12,6 +12,10 @@ The `ScoreModelLayer` stores these modifications, presents an updated model of t
 
 The only logical product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. The objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", but not their horizontal placement.
 
+## Dependencies
+
+The `ScoreModelLayer` requires the `AbstractMusicalModel` API.
+
 ## Organizational diagram
 
 <img src="img/ScoreModelLayer.png" alt="ScoreModelLayer" style="width: 20px;"/>
