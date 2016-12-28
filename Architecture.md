@@ -3,7 +3,7 @@
 ## Example API
 
 ```Swift
-struct ScoreModel {
+final class ScoreModel {
 	// ...
 }
 ```
@@ -40,7 +40,7 @@ struct RenderableScoreModelSegment {
 ```Swift
 class ViewController {
 
-	// "Model" in our MVC
+	// MARK: - Model
 	let scoreModel: ScoreModel
 	let scoreAnnotationState: ScoreAnnotationState
 	let filters: ScoreFilterState
@@ -64,7 +64,7 @@ class ViewController {
 		updatePersistentFilterState()
 	}
 
-	// MARK: - Rendering
+	// MARK: - View
 
 	func updateView(in range: ScoreRange) { }
 
