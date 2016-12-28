@@ -59,6 +59,7 @@ final class ScoreController {
 
 	init(abstractMusicalModel: AbstractMusicalModel) { 
 		...
+		retrievePersistentState()
 	}
 
 	// MARK: - View Preparation

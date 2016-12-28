@@ -57,6 +57,7 @@ final class ScoreModelLayer {
 
     	init(scoreModel: ScoreModel, range: ScoreRange) {
     		...
+            retrievePersistentState()
     	}
 
         /// - returns: Copy of `self` with filters applied
