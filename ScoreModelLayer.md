@@ -8,7 +8,7 @@ A performer may interact with the semantic construction of a score in three ways
 - Add a number of different types of **annotations**
 - Redefine the **ordering** of parts
 
-The `ScoreModelLayer` stores these modifications, presents an updated model of the score model when needed, and writes the updates to disk.
+The `ScoreModelLayer` stores these modifications, presents an updated model of the score when needed, and writes the updates to disk.
 
 The only logical product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. The objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", but not their horizontal placement.
 
