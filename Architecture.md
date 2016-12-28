@@ -59,14 +59,14 @@ final class PerformerViewController {
 	func didMakeScoreAnnotation(_ annotation: AnnotationType) {
 		updateAnnotationState(annotation)
 		updateView()
-		updatePersistentAnnotationState()
+		updateAnnotationStore()
 	}
 
 	// User applies a filter
 	func didApplyFilter(_ filter: ScoreFilter) {
 		updateFilterState(filter)
 		updateView()
-		updatePersistentFilterState()
+		updateFilterStore()
 	}
 
 	// MARK: - View
@@ -76,10 +76,10 @@ final class PerformerViewController {
 	// MARK: - Data access layer
 
 	// update annotations.xxx
-	func updatePersistentAnnotationState() { }
+	func updateAnnotationStore() { }
 
 	// update filters.xxx
-	func updatePersistentFiltersState() { }
+	func updateFilterStore() { }
 }
 ```
 
