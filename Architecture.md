@@ -4,6 +4,6 @@ The architecture of the **dn-m** iPad application follows the Model-View-Control
  
 - `AbstractMusicalModel` 
 - [`ScoreModelLayer`](ScoreModelLayer.md)
-- `ScoreViewLayer`
-- `[ScoreController](ScoreController.md)`
+- [`ScoreViewLayer`](ScoreViewLayer.md)
+- [`ScoreController`](ScoreController.md)
 
