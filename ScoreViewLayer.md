@@ -1,10 +1,10 @@
 # `ScoreViewLayer`
 
-**TODO**
+The `ScoreViewLayer` renders a `PageModel` onto the screen upon request.
 
 ## Dependencies
 
-**TODO**
+The `ScoreViewLayer` requires the `ScoreModelLayer`, and implicitly the `AbstractMusicalModel`.
 
 ## API
 

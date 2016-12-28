@@ -37,19 +37,13 @@ final class ScoreController {
 
 	// Given the available dimensions of the current device and the user interface 
 	// state, prepare the current screen's-worth of music notation.
-	private struct PageLayout {
-
-	}
+	private struct PageLayout { }
 
 	// An extension of the `ScoreModelSegment` with positional information
-	private final class SystemModel {
-
-	}
+	private final class SystemModel { }
 
 	// At first, proportionate spacing
-	private struct MusicSpacingModel {
-
-	}
+	private struct MusicSpacingModel { }
 
 	private struct Selection {
 		let start: Point
