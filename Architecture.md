@@ -9,6 +9,7 @@ final class ScoreModelLayer {
 
     /// Abstract representation of graphical objects of a System's worth of music.
     /// Extends the ScoreModel with a model of managing Spanner type objects over System-breaks.
+    /// Objects contained herein are organized in "time", not in horizontal space.
     /// This is the only public product of the `ScoreModelLayer`.
     struct ScoreModelSegment {
 
@@ -28,7 +29,7 @@ final class ScoreModelLayer {
 
     /// Abstract representation of graphical objects comprising a full score.
     /// This model has no knowledge of system breaks.
-    /// Objects are organized in time, not horizontal space.
+    /// Objects contained herein are organized in "time", not in horizontal space.
     private class ScoreModel {
 
         init(_ abstractMusicalModel: AbstractMusicalModel) {
