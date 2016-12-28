@@ -1,8 +1,8 @@
 # Architecture
 
-## Model Layer
+## Score Model Layer
 
-The model layer encapsulates abstract information of a work of music, as well as user-defined modifications to it.
+The score model layer encapsulates abstract information of a work of music, as well as user-defined modifications to it.
 
 For example, a performer may select to **filter** out any given attribute of any part in the score. Furthermore, they may add a number of different types of **annotations**. The model layer stores these modifications abstractly, and presents an updated model of the score model when needed.
 
