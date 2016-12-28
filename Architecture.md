@@ -85,7 +85,7 @@ final class ScoreModelLayer {
 
     // MARK: - Instance Methods
 
-    func scoreModelSgment(in range: ScoreRange, annotations: AnnotationModel) 
+    func scoreModelSegment(in range: ScoreRange, annotations: AnnotationModel) 
     	-> ScoreModelSegment 
     {
         // forwards scoreModel.segment(in:annotations:)
