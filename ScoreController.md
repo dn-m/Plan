@@ -64,7 +64,20 @@ final class ScoreController {
 
 	// MARK: - View Preparation
 
-	func available
+	func preparePage() {
+		// given height constraints (device * user.zoom),
+		// prepare page
+		prepareSystems()
+		// add structural info
+	}
+
+	func prepareSystems() -> [SystemModel] {
+		// given width constraints (device * user.zoom * user.musicSpacing),
+		// prepare systems
+		// In the case of dynamic music spacing, a continued dialogue must occur 
+		// between the `ScoreController` and the `ScoreModelLayer`.
+		scoreModelLayer.segment(in: availableScoreRange)
+	}
 
 	// MARK: - UI
 
@@ -80,6 +93,22 @@ final class ScoreController {
 
 
 } 
+
+struct UserInterfaceStateModel {
+	// zoop
+}
+
+struct MusicSpacingModel() {
+	
+}
+
+final class PageModel {
+	let systems: [SystemModel]
+}
+
+final class SystemModel {
+	init(_ scoreModelSegment: ScoreModelSegment, userInterfaceState: UserInterfaceStateModel, musicSpacing: MusicSpacingModel)
+}
 
 // Device state
 // "zoom"-level

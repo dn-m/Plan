@@ -31,7 +31,7 @@ final class ScoreModelLayer {
 	
 	// MARK: - Instance Methods
 
-	func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment
+	func segment(in range: ScoreRange) -> ScoreModelSegment
     func add(_ filter: ScoreFilter)
     func remove(_ filter: ScoreFilter)
     func add(_ annotation: ScoreAnnotation)
@@ -156,7 +156,7 @@ final class ScoreModelLayer {
 
     // MARK: - Instance Methods
 
-    func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment {
+    func segment(in range: ScoreRange) -> ScoreModelSegment {
         return scoreModel.segment(
             in: range, 
             annotations: annotations, 
