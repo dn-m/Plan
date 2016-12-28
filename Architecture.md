@@ -18,10 +18,31 @@ The only logical product of the model layer is a `ScoreModelSegment`, which is a
 
 <img src="img/ScoreModelLayer.png" alt="ScoreModelLayer" style="width: 20px;"/>
 
-## API and psuedo-implementation
+## API
 
 ```Swift
+final class ScoreModelLayer {
+	
+	// MARK: - Initializers
 
+	init(abstractMusicalModel: AbstractMusicalModel)
+	
+	// MARK: - Instance Methods
+
+	func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment
+    func add(_ filter: Filter)
+    func remove(_ filter: Filter)
+    func add(_ annotation: Annotation)
+    func remove(_ annotation: Annotation)
+    func add(_ ordering: Ordering)
+    func remove(_ ordering: Ordering)
+}
+```
+
+## Pseudo-implementation
+
+
+```Swift
 final class ScoreModelLayer {
 
     // MARK: - Nested Types
