@@ -4,7 +4,7 @@ The `ScoreViewLayer` renders a `PageModel` onto the screen upon request.
 
 ## Dependencies
 
-The `ScoreViewLayer` requires the `ScoreModelLayer`, and implicitly the `AbstractMusicalModel`.
+The `ScoreViewLayer` requires the [`ScoreModelLayer`](ScoreModelLayer.md), and implicitly the `AbstractMusicalModel`.
 
 ## API
 

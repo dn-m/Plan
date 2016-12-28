@@ -4,7 +4,7 @@ The `ScoreController` allows the user to interact with the `ScoreModelLayer` in 
 
 ## Dependencies
 
-The `ScoreController` requires the `AbstractMusicalModel`, `ScoreModelLayer`, and the `ScoreViewLayer`APIs.
+The `ScoreController` requires the `AbstractMusicalModel`, [`ScoreModelLayer`](ScoreModelLayer.md), and the [`ScoreViewLayer`](ScoreViewLayer.md) APIs.
 
 ## Organizational diagram
 
