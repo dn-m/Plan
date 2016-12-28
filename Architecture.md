@@ -5,9 +5,10 @@
 The `ScoreModelLayer` encapsulates abstract information of a work of music, as well as user-initiated modifications to it.
 
 A performer may interact with the semantic construction of a score in three ways:
-	- **Filter** out attributes of any part
-	- Add a number of different types of **annotations**
-	- Redefine the ordering of parts
+
+- **Filter** out attributes of any part
+- Add a number of different types of **annotations**
+- Redefine the ordering of parts
 
 The `ScoreModelLayer` stores these modifications, presents an updated model of the score model when needed, and writes the updates to disk.
 
