@@ -67,7 +67,7 @@ final class ScoreModelLayer {
     /// Protocol abstracting implementation for FilterModel, AnnotationModel, and OrderingModel.
     private protocol UserStateModel {
     	associatedtype Element
-    	var backingModel: UserStateBackingModel<T> { get }
+    	var backingModel: UserStateBackingModel<Element> { get }
     	func add(_ element: T)
     	func remove(_ element: T)
     }
