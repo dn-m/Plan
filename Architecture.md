@@ -16,17 +16,30 @@ final class ScoreModelLayer {
             ...
         }
 
+		/// - returns: Subset of `self` in a given range.
+        func segment(in range: ScoreRange) -> ScoreModelSegment {
+        	// ...
+        }
+
         /// - returns: Subset of `self` in a given range, with the given `annotations` merged.
-        func segment(in range: ScoreRange, annotations: AnnotationModel) -> ScoreModelSegment {
-            ...
+        func segment(in range: ScoreRange, annotations: AnnotationModel, filters: FilterModel) 
+        	-> ScoreModelSegment 
+        {
+            return segment(in: range)
+            	.annotated(with: annotations)
+            	.filtered(with: filters)
         }
     }
 
     /// Subset of ScoreModel, managing spanner objects abstractly (with time, not x)
     struct ScoreModelSegment {
 
+    	func filtered(with filters: FilterState) -> ScoreModelSegment {
+    		...
+    	}
+
     	/// - returns: Copy of self with annotations merged
-        func addingAnnotations(_ annotations: AnnotationModel) -> ScoreModelSegment {
+        func annotated(with annotations: AnnotationModel) -> ScoreModelSegment {
             ...
         }
     }
