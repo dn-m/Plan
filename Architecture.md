@@ -1,8 +1,6 @@
 # Architecture
 
-## Example API
-
-### Model Layer
+## Model Layer
 
 ```Swift
 final class ScoreModelLayer {
