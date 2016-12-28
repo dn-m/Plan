@@ -108,14 +108,5 @@ struct UserInterfaceStateModel {
 struct MusicSpacingModel() {
 	// horizontal characteristics of spacing time in space
 }
-
-final class PageModel {
-	let systems: [SystemModel]
-	let structure: ScoreStructureModel
-}
-
-final class SystemModel {
-	init(_ scoreModelSegment: ScoreModelSegment, userInterfaceState: UserInterfaceStateModel, musicSpacing: MusicSpacingModel)
-}
 ```
 

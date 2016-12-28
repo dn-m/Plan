@@ -23,4 +23,24 @@ final class ScoreViewLayer {
 
 ## Pseudo-implementation
 
-**TODO**
+```Swift
+final class ScoreViewLayer {
+	
+	// MARK: - Initializers
+
+	init()
+
+	// MARK: - Instance Methods
+
+	func render(_ pageModel: PageModel)	
+}
+
+final class PageModel {
+    let systems: [SystemModel]
+    let structure: ScoreStructureModel
+}
+
+final class SystemModel {
+	
+}
+```
