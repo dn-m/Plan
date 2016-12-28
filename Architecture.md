@@ -73,17 +73,17 @@ final class ScoreModelLayer {
     }
 
     /// Data structure holding overlapping ranges of filters (hide c for a:b in (t0,t1)).
-    private struct FilterModel {
+    private struct FilterModel: UserStateModel {
         let backingModel: ...
     }
 
     /// Data structure holding annotations (bowings, fingerings, cue links).
-    private struct AnnotationModel {
+    private struct AnnotationModel: UserStateModel {
         let backingModel: ...
     }
 
 	/// Data structure holding score-order selections.
-    private struct OrderingModel {
+    private struct OrderingModel: UserStateModel {
     	let backingModel: ...
     }
 
