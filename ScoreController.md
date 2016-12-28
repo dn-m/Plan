@@ -8,7 +8,7 @@ The `ScoreController` requires the `AbstractMusicalModel`, [`ScoreModelLayer`](S
 
 ## Organizational diagram
 
-**TODO**
+<img src="img/ScoreController.png" alt="ScoreController" style="width: 20px;"/>
 
 ## API
 
