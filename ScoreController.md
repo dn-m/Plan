@@ -51,9 +51,14 @@ final class ScoreController {
 
 	}
 
-	private struct ScoreSelection {
+	private struct Selection {
 		let start: Point
 		let end: Point
+	}
+
+	private struct ScoreSelection {
+		let start: ScoreBound
+		let end: ScoreBound
 	}
 
 	// MARK: - Initializers
@@ -95,11 +100,10 @@ final class ScoreController {
 	func didMakeFilter(_ filter: ScoreFilter)
 	func didMakeOrdering(_ ordering: ScoreOrdering)
 
-	private func didMakeSelection(start: Point, end: Point) { 
-		// prepare selection type
-	}
 
-	private func scoreRange(from selection: ScoreSelection) { }
+	private func didCompleteSelection(selection: Selection) { }
+
+	private func scoreRange(from selection: Selection) { }
 } 
 
 struct UserInterfaceStateModel {
@@ -118,8 +122,5 @@ final class PageModel {
 final class SystemModel {
 	init(_ scoreModelSegment: ScoreModelSegment, userInterfaceState: UserInterfaceStateModel, musicSpacing: MusicSpacingModel)
 }
-
-// Device state
-// "zoom"-level
 ```
 
