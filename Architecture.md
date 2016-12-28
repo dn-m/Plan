@@ -62,7 +62,7 @@ final class ScoreModelLayer {
         func remove(_ filter: Annotation) { }
     }
 
-    /// Reads and writes persisting user state on background thread.
+    /// Reads and writes persisting user state from/to disk on background thread.
     struct DataStore {
         func writeToFilterDataStore() { }
         func readFromFilterDataStore() { }
