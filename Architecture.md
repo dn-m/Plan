@@ -43,6 +43,9 @@ final class PerformerViewController {
 	// MARK: - Model
 
 	let scoreModel: ScoreModel
+
+	// MARK: - State
+
 	let scoreAnnotationState: ScoreAnnotationState
 	let filters: ScoreFilterState
 
