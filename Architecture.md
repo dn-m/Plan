@@ -38,7 +38,7 @@ struct RenderableScoreModelSegment {
 ```
 
 ```Swift
-class ViewController {
+final class PerformerViewController {
 
 	// MARK: - Model
 
