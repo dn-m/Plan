@@ -16,7 +16,7 @@ final class ScoreModelLayer {
             ...
         }
 
-        /// - returns: subset of `self` in a given range, with the given `annotations` merged.
+        /// - returns: Subset of `self` in a given range, with the given `annotations` merged.
         func segment(in range: ScoreRange, annotations: AnnotationModel) -> ScoreModelSegment {
             ...
         }
@@ -45,7 +45,7 @@ final class ScoreModelLayer {
         func remove(_ filter: Annotation) { }
     }
 
-    /// Reads and writes persisting user state
+    /// Reads and writes persisting user state on background thread.
     struct DataStore {
         func writeToFilterDataStore() { }
         func readFromFilterDataStore() { }
