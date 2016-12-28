@@ -4,7 +4,7 @@
 
 The model layer encapsulates abstract information of a work of music, as well as user-defined modifications it.
 
-For example, a performer may select to filter out any given attribute of any part on the score. Furthermore, they may add a number of different types of annotations. The model layer stores these modifications abstractly, and presents an updated model of the score model.
+For example, a performer may select to **filter** out any given attribute of any part on the score. Furthermore, they may add a number of different types of **annotations**. The model layer stores these modifications abstractly, and presents an updated model of the score model.
 
 The only product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. That is, the objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", and not their horizontal placement.
 
