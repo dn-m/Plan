@@ -7,10 +7,29 @@ final class ScoreModelLayer {
 
     // MARK: - Nested Types
 
+    /// Abstract representation of graphical objects of a System's worth of music, with management
+    /// of Spanner type objects.
+    /// This is the only public product of the `ScoreModelLayer`.
+    struct ScoreModelSegment {
+
+    	init(scoreModel: ScoreModel, range: ScoreRange) {
+    		...
+    	}
+
+    	func filtered(with filters: FilterState) -> ScoreModelSegment {
+    		...
+    	}
+
+    	/// - returns: Copy of self with annotations merged
+        func annotated(with annotations: AnnotationModel) -> ScoreModelSegment {
+            ...
+        }
+    }
+
     /// Abstract representation of graphical objects comprising a full score.
     /// This model has no knowledge of system breaks.
     /// Objects are organized in time, not horizontal space.
-    class ScoreModel {
+    private class ScoreModel {
 
         init(_ abstractMusicalModel: AbstractMusicalModel) {
             ...
@@ -31,39 +50,22 @@ final class ScoreModelLayer {
         }
     }
 
-    /// Subset of ScoreModel, managing spanner objects abstractly (with time, not x)
-    struct ScoreModelSegment {
-
-    	init(scoreModel: ScoreModel, range: ScoreRange) {
-    		...
-    	}
-
-    	func filtered(with filters: FilterState) -> ScoreModelSegment {
-    		...
-    	}
-
-    	/// - returns: Copy of self with annotations merged
-        func annotated(with annotations: AnnotationModel) -> ScoreModelSegment {
-            ...
-        }
-    }
-
     /// Data structure holding overlapping ranges of filters (hide c for a:b in (t0,t1)).
-    struct FilterModel {
+    private struct FilterModel {
         let backingModel: ...
         func add(_ filter: Filter) { }
         func remove(_ filter: Filter) { }
     }
 
     /// Data structure holding annotations (bowings, fingerings, cue links).
-    struct AnnotationModel {
+    private struct AnnotationModel {
         let backingModel: ...
         func add(_ filter: Annotation) { }
         func remove(_ filter: Annotation) { }
     }
 
     /// Reads and writes persisting user state from/to disk on background thread.
-    struct DataStore {
+    private struct DataStore {
         func writeToFilterDataStore() { }
         func readFromFilterDataStore() { }
         func writeToAnnotationDataStore() { }
@@ -88,6 +90,8 @@ final class ScoreModelLayer {
     func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment {
         return scoreModel.segment(in: range, annotations: annotations, filters: filters)
     }
+
+    // MARK: - Modifying Model
 
     func add(_ filter: Filter) {
         filters.add(filter)
