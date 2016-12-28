@@ -13,7 +13,7 @@ final class ScoreModelLayer {
     class ScoreModel {
 
         init(_ abstractMusicalModel: AbstractMusicalModel) {
-            ...
+            // ...
         }
 
 		/// - returns: Subset of `self` in a given range.
