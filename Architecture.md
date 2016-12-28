@@ -34,6 +34,10 @@ final class ScoreModelLayer {
     /// Subset of ScoreModel, managing spanner objects abstractly (with time, not x)
     struct ScoreModelSegment {
 
+    	init(scoreModel: ScoreModel, range: ScoreRange) {
+    		...
+    	}
+
     	func filtered(with filters: FilterState) -> ScoreModelSegment {
     		...
     	}
