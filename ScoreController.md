@@ -25,12 +25,11 @@ final class ScoreController {
 
 ## Pseudo-implementation
 
-**TODO**
-
 ```Swift
 final class ScoreController {
 	
 	// MARK: - Nested Types
+
 	private struct DataStore {
 		func writeToUserInterfaceDataStore()
 		func readFromUserInterfaceDataStore()
@@ -63,6 +62,10 @@ final class ScoreController {
 		...
 	}
 
+	// MARK: - View Preparation
+
+	func available
+
 	// MARK: - UI
 
 	func didMakeAnnotation(_ annotation: ScoreAnnotation)
@@ -77,9 +80,8 @@ final class ScoreController {
 
 
 } 
-```
 
-// DataStore
 // Device state
 // "zoom"-level
-// beat-spacing
+```
+
