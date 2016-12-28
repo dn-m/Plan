@@ -43,7 +43,7 @@ class ViewController {
 	// "Model" in our MVC
 	let scoreModel: ScoreModel
 	let scoreAnnotationState: ScoreAnnotationState
-	let filters: ScoreFilter
+	let filters: ScoreFilterState
 
 	// "View" in our MVC
 	let view: View
