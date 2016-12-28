@@ -7,16 +7,16 @@ final class ScoreModelLayer {
 
     // MARK: - Nested Types
 
-    /// Abstract representation of graphical objects comprising a full score
-    /// This model has no knowledge of system breaks
-    /// Objects are organized in time, not horizontal space
+    /// Abstract representation of graphical objects comprising a full score.
+    /// This model has no knowledge of system breaks.
+    /// Objects are organized in time, not horizontal space.
     class ScoreModel {
 
         init(_ abstractMusicalModel: AbstractMusicalModel) {
             ...
         }
 
-        /// - returns: subset of self in a given range, with the given `annotations` merged
+        /// - returns: subset of `self` in a given range, with the given `annotations` merged.
         func segment(in range: ScoreRange, annotations: AnnotationModel) -> ScoreModelSegment {
             ...
         }
@@ -27,18 +27,18 @@ final class ScoreModelLayer {
 
     	/// - returns: Copy of self with annotations merged
         func addingAnnotations(_ annotations: AnnotationModel) -> ScoreModelSegment {
-            
+            ...
         }
     }
 
-    /// Data structure holding overlapping ranges of filters (hide z for x:y)
+    /// Data structure holding overlapping ranges of filters (hide c for a:b in (t0,t1)).
     struct FilterModel {
         let backingModel: ...
         func add(_ filter: Filter) { }
         func remove(_ filter: Filter) { }
     }
 
-    /// Data structure holding annotations (bowings, fingerings, cue links)
+    /// Data structure holding annotations (bowings, fingerings, cue links).
     struct AnnotationModel {
         let backingModel: ...
         func add(_ filter: Annotation) { }
