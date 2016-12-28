@@ -64,6 +64,8 @@ final class ScoreModelLayer {
         }
     }
 
+    // TODO: Abstract away duplication in protocol for the user-selection model types
+
     /// Data structure holding overlapping ranges of filters (hide c for a:b in (t0,t1)).
     private struct FilterModel {
         let backingModel: ...
@@ -78,20 +80,32 @@ final class ScoreModelLayer {
         func remove(_ filter: Annotation) { }
     }
 
+	/// Data structure holding score-order selections.
+    private struct OrderingModel {
+    	let backingModel: ...
+    	func add(_ filter: Ordering) { }
+        func remove(_ filter: Ordering) { }
+    }
+
     /// Reads and writes persisting user state from/to disk on background thread.
+    /// Files: filters.xxx, annotations.xxx, orderings.xxx
     private struct DataStore {
         func writeToFilterDataStore() { }
         func readFromFilterDataStore() { }
         func writeToAnnotationDataStore() { }
         func readFromAnnotationDataStore() { }
+        func writeToOrderingDataStore() { }
+        func readFromOrderingDataStore() { }
     }
 
     // MARK: - Instance Properties
 
     private var filters: FilterModel
     private var annotations: AnnotationModel
+    private var orderings: OrderingModel
     private let dataStore: DataStore
-    private let scoreModel: ScoreModel
+
+    private let scoreModel: ScoreModel 
 
     // MARK: - Initializers
 
@@ -122,9 +136,19 @@ final class ScoreModelLayer {
         writeToAnnotationDataStore()
     }
 
-    func remove(_ filter: Annotation) { 
+    func remove(_ annotation: Annotation) { 
         annotations.remove(annotation)
         writeToAnnotationDataStore()
+    }
+
+    func add(_ ordering: Ordering) { 
+        annotations.add(annotation)
+        writeToOrderingDataStore()
+    }
+
+    func remove(_ ordering: Ordering) { 
+        annotations.remove(ordering)
+        writeToOrderingDataStore()
     }
 }
 ```
