@@ -57,14 +57,14 @@ final class PerformerViewController {
 
 	// User makes a score annotation
 	func didMakeScoreAnnotation(_ annotation: AnnotationType) {
-		updateAnnotationState()
+		updateAnnotationState(annotation)
 		updateView()
 		updatePersistentAnnotationState()
 	}
 
 	// User applies a filter
 	func didApplyFilter(_ filter: ScoreFilter) {
-		updateFilterState()
+		updateFilterState(filter)
 		updateView()
 		updatePersistentFilterState()
 	}
