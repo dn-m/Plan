@@ -64,27 +64,27 @@ final class ScoreModelLayer {
         }
     }
 
-    // TODO: Abstract away duplication in protocol for the user-selection model types
+    /// Protocol abstracting implementation for FilterModel, AnnotationModel, and OrderingModel.
+    private protocol UserStateModel {
+    	associatedtype Element
+    	var backingModel: UserStateBackingModel<T> { get }
+    	func add(_ element: T)
+    	func remove(_ element: T)
+    }
 
     /// Data structure holding overlapping ranges of filters (hide c for a:b in (t0,t1)).
     private struct FilterModel {
         let backingModel: ...
-        func add(_ filter: Filter) { }
-        func remove(_ filter: Filter) { }
     }
 
     /// Data structure holding annotations (bowings, fingerings, cue links).
     private struct AnnotationModel {
         let backingModel: ...
-        func add(_ filter: Annotation) { }
-        func remove(_ filter: Annotation) { }
     }
 
 	/// Data structure holding score-order selections.
     private struct OrderingModel {
     	let backingModel: ...
-    	func add(_ filter: Ordering) { }
-        func remove(_ filter: Ordering) { }
     }
 
     /// Reads and writes persisting user state from/to disk on background thread.
