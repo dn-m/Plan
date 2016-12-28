@@ -2,7 +2,12 @@
 
 ## Model Layer
 
+The model layer encapsulates the abstract model of the information in a work of music. 
+
+The only product of the model layer is a `ScoreModelSegment`, which is an abstract representation of the graphical objects comprising a `System`'s-worth of music. That is, the objects contained within the `ScoreModelSegment` are knowledgeable of "musical time", yet not their horizontal placement.
+
 ```Swift
+
 final class ScoreModelLayer {
 
     // MARK: - Nested Types
