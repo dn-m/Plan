@@ -72,10 +72,10 @@ final class ScoreModelLayer {
 
     // MARK: - Instance Properties
 
-    let scoreModel: ScoreModel
-    var filters: FilterModel
-    var annotations: AnnotationModel
-    let dataStore: DataStore
+    private let scoreModel: ScoreModel
+    private var filters: FilterModel
+    private var annotations: AnnotationModel
+    private let dataStore: DataStore
 
     // MARK: - Initializers
 
