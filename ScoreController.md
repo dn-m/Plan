@@ -95,7 +95,7 @@ final class ScoreController {
 } 
 
 struct UserInterfaceStateModel {
-	// zoop
+	// zoom
 }
 
 struct MusicSpacingModel() {
