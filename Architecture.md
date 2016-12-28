@@ -2,84 +2,88 @@
 
 ## Example API
 
-```Swift
-final class ScoreModel {
-	// ...
-}
-```
+### Model Layer
 
 ```Swift
-struct AnnotatedScoreModel {
-	
-	final class ScoreAnnotationState {
-		var data: [String: String]
-		// ...
-	}
+final class ScoreModelLayer {
 
-	let scoreModel: ScoreModel
-	let state: ScoreAnnotationState
+    // MARK: - Nested Types
 
-	func update(...) { }
-}
+    class ScoreModel {
 
-```
+        init(_ abstractMusicalModel: AbstractMusicalModel) {
+            ...
+        }
 
-```Swift
-struct ScoreModelSegment {
-	// Subset of ScoreModel
-	// Manages spanners abstractly
-}
-```
+        func segment(in range: ScoreRange, annotations: AnnotationModel) -> ScoreModelSegment {
+            ...
+        }
+    }
 
-```Swift
-struct RenderableScoreModelSegment {
-	// System model
-}
-```
+    // A subset of ScoreModel, managing spanner objects abstractly (with time, not x)
+    struct ScoreModelSegment {
+        func addingAnnotations(_ annotations: AnnotationModel) -> ScoreModelSegment {
+            // returns a copy of self with annotations merged
+        }
+    }
 
-```Swift
-final class PerformerViewController {
+    struct FilterModel {
+        let backingModel: ...
+        func add(_ filter: Filter) { }
+        func remove(_ filter: Filter) { }
+    }
 
-	// MARK: - Model
+    struct AnnotationModel {
+        let backingModel: ...
+        func add(_ filter: Annotation) { }
+        func remove(_ filter: Annotation) { }
+    }
 
-	let scoreModel: ScoreModel
+    struct DataStore {
+        func writeToFilterDataStore() { }
+        func readFromFilterDataStore() { }
+        func writeToAnnotationDataStore() { }
+        func readFromAnnotationDataStore() { }
+    }
 
-	// MARK: - State
+    // MARK: - Instance Properties
 
-	let scoreAnnotationState: ScoreAnnotationState
-	let filters: ScoreFilterState
+    let scoreModel: ScoreModel
+    let filters: FilterModel
+    let annotations: AnnotationModel
+    let dataStore: DataStore
 
-	// MARK: - View
+    // MARK: - Initializers
 
-	let view: View
+    init(abstractMusicalModel: AbstractMusicalModel) {
+        self.scoreModel = ScoreModel(abstractMusicalModel)
+    }
 
-	// MARK: - UI
+    // MARK: - Instance Methods
 
-	// User makes a score annotation
-	func didMakeScoreAnnotation(_ annotation: AnnotationType) {
-		updateAnnotationState(annotation)
-		updateView()
-		updateAnnotationStore()
-	}
+    func segment(in range: ScoreRange, annotations: AnnotationModel) -> ScoreModelSegment {
+        // forwards scoreModel.segment(in:annotations:)
+    }
 
-	// User applies a filter
-	func didApplyFilter(_ filter: ScoreFilter) {
-		updateFilterState(filter)
-		updateView()
-		updateFilterStore()
-	}
+    func add(_ filter: Filter) {
+        filters.add(filter)
+        writeToFilterDataStore()
+    }
 
-	// MARK: - View
+    func remove(_ filter: Filter) { 
+        filters.remove(filter)
+        writeToFilterDataStore()
+    }
 
-	func updateView(in range: ScoreRange) { }
+    func add(_ annotation: Annotation) { 
+        annotations.add(annotation)
+        writeToAnnotationDataStore()
+    }
 
-	// MARK: - Data access layer
-
-	// update annotations.xxx
-	func updateAnnotationStore() { }
-
-	// update filters.xxx
-	func updateFilterStore() { }
+    func remove(_ filter: Annotation) { 
+        annotations.remove(annotation)
+        writeToAnnotationDataStore()
+    }
 }
 ```
 
