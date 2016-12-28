@@ -70,7 +70,7 @@ final class ScoreController {
 	// MARK: - View Preparation
 
 	func render(_ pageModel: PageModel) {
-
+		viewLayer.render(pageModel)
 	}
 
 	private func preparePage() {
@@ -79,6 +79,9 @@ final class ScoreController {
 		// - user zoom state,
 		// prepare Page
 		prepareSystems()
+		// prepare structure
+		let page = PageModel(...)
+		render(page)
 	}
 
 	private func prepareSystems() -> [SystemModel] {
@@ -90,7 +93,7 @@ final class ScoreController {
 		// In the case of dynamic music spacing, a continued dialogue must occur 
 		// between the `ScoreController` and the `ScoreModelLayer`.
 		while accumHeight < maxHeight {
-			scoreModelLayer.segment(in: availableScoreRange)
+			....append(scoreModelLayer.segment(in: availableScoreRange))
 		}
 	}
 
@@ -100,9 +103,7 @@ final class ScoreController {
 	func didMakeFilter(_ filter: ScoreFilter)
 	func didMakeOrdering(_ ordering: ScoreOrdering)
 
-
 	private func didCompleteSelection(selection: Selection) { }
-
 	private func scoreRange(from selection: Selection) { }
 } 
 
