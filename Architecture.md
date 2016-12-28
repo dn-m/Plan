@@ -2,7 +2,7 @@
 
 ## Model Layer
 
-The model layer encapsulates the abstract information in a work of music, and user-defined modifications to this information.
+The model layer encapsulates abstract information of a work of music, as well as user-defined modifications it.
 
 For example, a performer may select to filter out any given attribute of any part on the score. Furthermore, they may add a number of different types of annotations. The model layer stores these modifications abstractly, and presents an updated model of the score model.
 
