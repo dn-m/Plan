@@ -40,7 +40,6 @@ struct RenderableScoreModelSegment {
 ```Swift
 class ViewController {
 
-	// Reference to score model with added annotations
 	// "Model" in our MVC
 	let scoreModel: ScoreModel
 	let scoreAnnotationState: ScoreAnnotationState
