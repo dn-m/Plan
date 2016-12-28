@@ -7,3 +7,6 @@ The architecture of the **dn-m** iPad application follows the Model-View-Control
 - [`ScoreViewLayer`](ScoreViewLayer.md)
 - [`ScoreController`](ScoreController.md)
 
+## Organizational diagram
+
+<img src="img/Architecture.png" alt="Architecture" style="width: 20px;"/>
