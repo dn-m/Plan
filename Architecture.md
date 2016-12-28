@@ -9,4 +9,4 @@ The architecture of the **dn-m** iPad application follows the Model-View-Control
 
 ## Organizational diagram
 
-<img src="img/Arch.png" alt="Architecture" style="width: 20px;"/>
+<img src="img/Architecture.png" alt="Architecture" style="width: 20px;"/>
