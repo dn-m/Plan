@@ -64,19 +64,29 @@ final class ScoreController {
 
 	// MARK: - View Preparation
 
-	func preparePage() {
-		// given height constraints (device * user.zoom),
-		// prepare page
-		prepareSystems()
-		// add structural info
+	func render(_ pageModel: PageModel) {
+
 	}
 
-	func prepareSystems() -> [SystemModel] {
-		// given width constraints (device * user.zoom * user.musicSpacing),
-		// prepare systems
+	private func preparePage() {
+		// Given height constrains:
+		// - device dimensions
+		// - user zoom state,
+		// prepare Page
+		prepareSystems()
+	}
+
+	private func prepareSystems() -> [SystemModel] {
+		// Given width constraints:
+		// - device dimensions
+		// - user zoom state
+		// - music spacing model,
+		// prepare systems.
 		// In the case of dynamic music spacing, a continued dialogue must occur 
 		// between the `ScoreController` and the `ScoreModelLayer`.
-		scoreModelLayer.segment(in: availableScoreRange)
+		while accumHeight < maxHeight {
+			scoreModelLayer.segment(in: availableScoreRange)
+		}
 	}
 
 	// MARK: - UI
@@ -90,8 +100,6 @@ final class ScoreController {
 	}
 
 	private func scoreRange(from selection: ScoreSelection) { }
-
-
 } 
 
 struct UserInterfaceStateModel {
@@ -99,11 +107,12 @@ struct UserInterfaceStateModel {
 }
 
 struct MusicSpacingModel() {
-	
+	// horizontal characteristics of spacing time in space
 }
 
 final class PageModel {
 	let systems: [SystemModel]
+	let structure: ScoreStructureModel
 }
 
 final class SystemModel {
