@@ -4,7 +4,7 @@ The `ScoreModelLayer` encapsulates abstract information of a work of music, as w
 
 A performer may interact with the semantic construction of a score in three ways:
 
-- **ScoreFilter** out attributes of any part
+- **Filter** out attributes of any part
 - Add a number of different types of **annotations**
 - Redefine the **ordering** of parts
 
