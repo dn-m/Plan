@@ -73,8 +73,8 @@ final class ScoreModelLayer {
     // MARK: - Instance Properties
 
     let scoreModel: ScoreModel
-    let filters: FilterModel
-    let annotations: AnnotationModel
+    var filters: FilterModel
+    var annotations: AnnotationModel
     let dataStore: DataStore
 
     // MARK: - Initializers
@@ -85,10 +85,10 @@ final class ScoreModelLayer {
 
     // MARK: - Instance Methods
 
-    func scoreModelSegment(in range: ScoreRange, annotations: AnnotationModel) 
-    	-> ScoreModelSegment 
-    {
-        // forwards scoreModel.segment(in:annotations:)
+    func scoreModelSegment(in range: ScoreRange) -> ScoreModelSegment {
+        return scoreModel.segment(in: range)
+        	.annotated(with: annotations)
+        	.filtered(with: filters)
     }
 
     func add(_ filter: Filter) {
