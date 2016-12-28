@@ -8,7 +8,18 @@ The `ScoreViewLayer` requires the `ScoreModelLayer`, and implicitly the `Abstrac
 
 ## API
 
-**TODO**
+```Swift
+final class ScoreViewLayer {
+	
+	// MARK: - Initializers
+
+	init()
+
+	// MARK: - Instance Methods
+
+	func render(_ pageModel: PageModel)
+}
+```
 
 ## Pseudo-implementation
 
