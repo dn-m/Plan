@@ -55,7 +55,7 @@ final class ScoreModelLayer {
     		...
     	}
 
-    	func filtered(with filters: FilterState) -> ScoreModelSegment {
+    	func filtered(with filters: FilterModel) -> ScoreModelSegment {
     		...
     	}
 
