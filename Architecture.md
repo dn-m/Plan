@@ -159,8 +159,6 @@ final class ScoreModelLayer {
 }
 ```
 
-![Architecture](img/architecture.png)
-
 ---
 
 ## Input
