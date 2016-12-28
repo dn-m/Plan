@@ -13,12 +13,12 @@ final class ScoreModelLayer {
     class ScoreModel {
 
         init(_ abstractMusicalModel: AbstractMusicalModel) {
-            // ...
+            ...
         }
 
 		/// - returns: Subset of `self` in a given range.
         func segment(in range: ScoreRange) -> ScoreModelSegment {
-        	// ...
+        	...
         }
 
         /// - returns: Subset of `self` in a given range, with the given `annotations` merged.
