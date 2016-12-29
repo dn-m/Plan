@@ -54,7 +54,6 @@ final class ScoreController {
 
 	private var model: ScoreModel
 	private var view: ScoreViewLayer
-	
 
 	// MARK: - Initializers
 
