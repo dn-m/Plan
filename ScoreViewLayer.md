@@ -13,12 +13,15 @@ final class ScoreViewLayer {
 	
 	// MARK: - Initializers
 
-	init()
+	init(scoreModel: ScoreModel)
 
 	// MARK: - Instance Methods
 
-	func updateUserInterfaceState(_ userInterfaceState: UserInterfaceState)
-	func updateMusicSpacingModel(_ musicSpacingModel: MusicSpacingModel)
+	func render(
+		in scoreRange: ScoreRange, 
+		dimensions: Dimensions, 
+		musicSpacingModel: MusicSpacingModel
+	)
 }
 ```
 
@@ -37,15 +40,15 @@ final class ScoreViewLayer {
 	
 	// MARK: - Initializers
 
-	init()
+	init(scoreModel: ScoreModel)
 
 	// MARK: - Instance Methods
 
-	func render(_ pageModel: PageModel)	
-
-		func render(_ pageModel: PageModel) {
-		viewLayer.render(pageModel)
-	}
+	func render(
+		in scoreRange: ScoreRange, 
+		dimensions: Dimensions, 
+		musicSpacingModel: MusicSpacingModel
+	)
 
 	private func preparePage() {
 		// Given height constrains:

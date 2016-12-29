@@ -17,8 +17,6 @@ final class ScoreController {
 
 	// MARK: - Instance Properties
 
-	let view: ScoreViewLayer
-
 	// MARK: - Initializers
 
 	init(abstractMusicalModel: AbstractMusicalModel)
@@ -47,10 +45,18 @@ final class ScoreController {
 		let end: Point
 	}
 
+	private var userInterfaceState: UserInterfaceState
+	private var musicSpacingModel: MusicSpacingModel
+	
+	private var model: ScoreModel
+	private var view: ScoreViewLayer
+	
+
 	// MARK: - Initializers
 
 	init(abstractMusicalModel: AbstractMusicalModel) { 
-		...
+		self.model = ScoreModelLayer(abstractMusicalModel: AbstractMusicalModel)
+		self.view = ScoreViewLayer(scoreModel: model)
 		retrievePersistentState()
 	}
 
