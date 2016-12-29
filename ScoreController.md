@@ -69,7 +69,6 @@ final class ScoreController {
 	func didMakeFilter(_ filter: ScoreFilter)
 	func didMakeOrdering(_ ordering: ScoreOrdering)
 
-
 	func didCompleteSelection(selection: Selection) { }
 	private func scoreRange(from selection: Selection) { }
 } 
