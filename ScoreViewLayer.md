@@ -17,6 +17,8 @@ final class ScoreViewLayer {
 
 	// MARK: - Instance Methods
 
+	func scoreRange(selection: Selection) -> ScoreRange
+
 	func render(
 		in scoreRange: ScoreRange, 
 		dimensions: Dimensions, 
@@ -43,6 +45,8 @@ final class ScoreViewLayer {
 	init(scoreModel: ScoreModel)
 
 	// MARK: - Instance Methods
+
+	func scoreRange(selection: Selection) -> ScoreRange
 
 	func render(
 		in scoreRange: ScoreRange, 
