@@ -24,6 +24,9 @@ final class ScoreController {
 	init(abstractMusicalModel: AbstractMusicalModel)
 
 	// MARK: - Instance Methods
+
+	func didBeginSelection(_ selection: Selection)
+	func didCompleteSelection(_ selection: Selection)
 }
 ```
 
@@ -35,8 +38,8 @@ final class ScoreController {
 	// MARK: - Nested Types
 
 	private struct DataStore {
-		func writeToUserInterfaceDataStore()
-		func readFromUserInterfaceDataStore()
+		func writeToUserInterfaceStateDataStore()
+		func readFromUserInterfaceStateDataStore()
 	}
 
 	private struct Selection {
@@ -57,16 +60,13 @@ final class ScoreController {
 	func didMakeFilter(_ filter: ScoreFilter)
 	func didMakeOrdering(_ ordering: ScoreOrdering)
 
-	private func didCompleteSelection(selection: Selection) { }
+
+	func didCompleteSelection(selection: Selection) { }
 	private func scoreRange(from selection: Selection) { }
 } 
 
-struct UserInterfaceStateModel {
+struct UserInterfaceState {
 	// zoom
-}
-
-struct MusicSpacingModel() {
-	// horizontal characteristics of spacing time in space
 }
 ```
 

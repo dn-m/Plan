@@ -18,6 +18,7 @@ final class ScoreViewLayer {
 	// MARK: - Instance Methods
 
 	func update(with userInterfaceState: UserInterfaceState)
+	func update(with musicSpacingModel: MusicSpacingModel)
 }
 ```
 
@@ -78,5 +79,9 @@ final class PageModel {
 
 final class SystemModel {
 	
+}
+
+struct MusicSpacingModel() {
+	// horizontal characteristics of spacing time in space
 }
 ```
