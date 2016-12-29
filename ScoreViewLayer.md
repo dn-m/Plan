@@ -17,8 +17,8 @@ final class ScoreViewLayer {
 
 	// MARK: - Instance Methods
 
-	func update(with userInterfaceState: UserInterfaceState)
-	func update(with musicSpacingModel: MusicSpacingModel)
+	func updateUserInterfaceState(_ userInterfaceState: UserInterfaceState)
+	func updateMusicSpacingModel(_ musicSpacingModel: MusicSpacingModel)
 }
 ```
 

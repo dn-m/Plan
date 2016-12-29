@@ -66,7 +66,7 @@ final class ScoreController {
 } 
 
 struct UserInterfaceState {
-	// zoom
+	// zoom, music-spacing
 }
 ```
 
