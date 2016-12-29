@@ -45,9 +45,13 @@ final class ScoreController {
 		let end: Point
 	}
 
+	// manage stateful Selection construction
+
+	private var scoreRange: ScoreRange
+
 	private var userInterfaceState: UserInterfaceState
 	private var musicSpacingModel: MusicSpacingModel
-	
+
 	private var model: ScoreModel
 	private var view: ScoreViewLayer
 	
