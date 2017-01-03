@@ -10,7 +10,7 @@ Complete implementation of basic data structures, with no complex operations.
   - [`Pitch`](https://github.com/dn-m/Pitch)
   - [`Rhythm`](https://github.com/dn-m/Rhythm)
   - [`Dynamics`](https://github.com/dn-m/Dynamics)
-  - `Articulations`
+  - [`Articulations`](https://github.com/dn-m/Articulations)
   - `WorkModel`
     - With `Jean-Louis`: Examine storage strategies (attribute-tables with `Event`-objects as keys)
   
