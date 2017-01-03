@@ -23,3 +23,7 @@ Repository for planning the development of the **dn-m** project.
   - Metronomes knowledgable of the musical material
 - Performers can have a more direct relationship to the activation of electronic musical elements
   - Interact with score following software
+
+## Development
+
+See the [achitecture](Architecture.md) plan.
