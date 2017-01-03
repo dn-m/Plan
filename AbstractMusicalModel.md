@@ -8,7 +8,7 @@ final class Event {
 	// Any collection of musical elements (`Pitch`, `Dynamic`, `Articulation`, `OSCMessage`, etc.)
 	let elements: [Any]
 
-	//
+	// Performer -> Instrument -> Voice
 	let identifierPath: [IdentifierPath]
 }
 
