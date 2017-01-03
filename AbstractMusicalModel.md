@@ -1,6 +1,6 @@
 # Abstract Musical Model
 
-The current implementation of the `Abstract Musical Model` separates `Measure` values and a sequence of events organized hierarchically.
+A model of music with ignorant of graphical representations.
 
 ```Swift
 final class Event {
