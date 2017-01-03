@@ -11,7 +11,7 @@ enum ContinuationOrInstance <T> {
 }
 ```
 
-Whether or not an `instance` is a "rest" or an actual sounding event.
+Whether or not an `instance` is a "rest" or an actual "sounding" event.
 
 ```Swift
 enum AbsenceOrEvent <T> {
@@ -20,9 +20,9 @@ enum AbsenceOrEvent <T> {
 }
 ```
 
-Composing these two concepts together, we get a `MetricalContext<T>`.
+A `MetricalContext` nests the `AbsenceOrEvent` within the `ContinuationOrInstance`.
 
-A `MetricalContext <T>` can be a `.continuation` | (`.absence` | `.event`). This models a metrical context by making it logically impossible to have a "rest" that is "tied"-into.
+In other words, it can be a `.continuation` | (`.absence` | `.event`). This models a metrical context by making it logically impossible to have a "rest" that is "tied"-into.
 
 ```Swift
 typealias MetricalContext <T> = ContinuationOrInstance<AbsenceOrEvent<T>>
