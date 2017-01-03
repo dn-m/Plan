@@ -18,6 +18,8 @@ Complete implementation of basic data structures, with no complex operations.
   - `SpannerModel`
   - `TablatureModel`
 
+---
+
 ### Create skeleton of complete architecture
 
 Define clear and narrow APIs between highly-modularized frameworks. 
@@ -36,11 +38,15 @@ Define clear and narrow APIs between highly-modularized frameworks.
 - **Optional:**
   - Implement a basic example of a score (from abstract model to graphic representation)
   
+---
+  
 ### Basic parsing of `MusicXML`
 
 Extract abstract musical elements from `MusicXML` using the [dn-m/MusicMXL](https://github.com/dn-m/MusicMXL) framework.
 
 > `Antescofo` parser as a model.
+
+---
 
 ### Receive OSC messages from `Antescofo`
 
@@ -50,6 +56,8 @@ Using the [dn-m/OSC](https://github.com/dn-m/OSC) framework, receive `OSC` messa
   - Just make contact.
 - **Optional**: 
   - Construct model mirroring the internals of `Antescofo`.
+
+---
 
 ### Primitive graphical representation of `ScoreModel`
 
