@@ -42,7 +42,7 @@ Define clear and narrow APIs between highly-modularized frameworks.
   
 ### Basic parsing of `MusicXML`
 
-Extract abstract musical elements from `MusicXML` using the [dn-m/MusicMXL](https://github.com/dn-m/MusicMXL) framework.
+Extract abstract (non-notational) musical elements from `MusicXML` using the [dn-m/MusicMXL](https://github.com/dn-m/MusicMXL) framework.
 
 > `Antescofo` parser as a model.
 
