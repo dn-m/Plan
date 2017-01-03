@@ -3,21 +3,23 @@
 The current implementation of the `Abstract Musical Model` separates `Measure` values and a sequence of events organized hierarchically.
 
 ```Swift
+final class Event {
+	let identifierPath: [IdentifierPath]
+
+	// Any collection of musical elements (`Pitch`, `Dynamic`, `Articulation`, `OSCMessage`, etc.)
+	let elements: [Any]
+}
+
 final class AbstractMusicModel {
-	let measures: [Measure]
-	let events: [ContextualizedEventTree]
+
+	// Model of measures, etc.
+	let structure: [Structure]
+
+	// Rhythmical representations of `Event` objects
+	let rhythms: [RhythmTree<Event>]
+
+	let articulations: [Event: Articulation]
+	let dynamics: [Event: Dynamic]
+	// etc...
 }
 ```
-
-## Goals
-
-Prefer to avoid too constricting of hierarchical organizations
-
-## Possible changes
-
-
-
-Currently, the only structural information of a work is modeled as a sequence of `Measure`.
-
-First of all, this constricts the music supported to being metrical in nature, without mutilating the concept of a `Measure`.
-
