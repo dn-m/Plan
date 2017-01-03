@@ -24,9 +24,9 @@ Complete implementation of basic data structures, with no complex operations.
 
 Define clear and narrow APIs between highly-modularized frameworks. 
 
-  - `AbstractMusicalModel`
-  - `ScoreModelLayer`
-  - `ScoreViewLayer`
+  - [`AbstractMusicalModel`](https://github.com/dn-m/AbstractMusicalModel)
+  - [`ScoreModelLayer`](https://github.com/dn-m/ScoreModelLayer)
+  - [`ScoreViewLayer`](https://github.com/dn-m/ScoreViewLayer)
     - `ScoreRenderer`
     - `Real-time graphics`
   - `dn-m iOS` / `macOS` app targets
