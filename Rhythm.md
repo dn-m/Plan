@@ -4,8 +4,6 @@
 
 Whether or not a potential event is "tied"-over from the previous context, or whether it is a new instance of `T`.
 
-Essentially the `Optional` monad.
-
 ```Swift
 enum ContinuationOrInstance <T> {
     case continuation
@@ -14,8 +12,6 @@ enum ContinuationOrInstance <T> {
 ```
 
 Whether or not an `instance` is a "rest" or an actual sounding event.
-
-Essentially the `Optional` monad.
 
 ```Swift
 enum AbsenceOrEvent <T> {
