@@ -14,7 +14,7 @@ The only logical product of the model layer is a `ScoreModelSegment`, which is a
 
 ## Dependencies
 
-The [`ScoreModelLayer`](ScoreModelLayer.md) requires the `AbstractMusicalModel` API.
+The [`ScoreModelLayer`](ScoreModelLayer.md) requires the [`AbstractMusicalModel`](AbstractMusicalModel.md) API.
 
 ## Organizational diagram
 
