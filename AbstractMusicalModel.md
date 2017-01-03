@@ -4,11 +4,30 @@ The current implementation of the `Abstract Musical Model` separates `Measure` v
 
 ```Swift
 final class Event {
-	let identifierPath: [IdentifierPath]
-
+	
 	// Any collection of musical elements (`Pitch`, `Dynamic`, `Articulation`, `OSCMessage`, etc.)
 	let elements: [Any]
+
+	//
+	let identifierPath: [IdentifierPath]
 }
+
+// Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
+extension Event: Hashable {
+	var hashValue: Int {
+		return ObjectIdentifier(self).hashValue
+	}
+}
+
+final class MetricalEventTree {
+	
+	// Performer -> Instrument -> Voice
+	let identifierPath: [IdentifierPath]
+
+	// Internal representation of rhythm
+	private let rhythmTree: RhythmTree<Event>
+}
+
 
 final class AbstractMusicModel {
 
@@ -20,6 +39,7 @@ final class AbstractMusicModel {
 
 	let articulations: [Event: Articulation]
 	let dynamics: [Event: Dynamic]
+	let spanners: [Event: (SpannerType, Event)] // ?
 	// etc...
 }
 ```
