@@ -135,7 +135,8 @@ information["dynamic"]![event] = Dynamic([.p, .p])
 
 - `Spanner` types (slur from `Event a` -> `Event b`)
 - Metrical organization (rhythmical information)
-- `Duration` vs `MetricalDuration`…
+- `Duration` vs `MetricalDuration`
+- Consider collapsing common types (`PerformanceContext`, `TemporalContext`) into pre-fab types
 
 ### Database extraction
 
