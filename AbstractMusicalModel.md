@@ -4,28 +4,21 @@ A model of music, ignorant of graphical representations.
 
 ## Performance Context
 
-### Performer
-
-Model of a human or computer agent.
-
 ```Swift
-typealias PerformerIdentifier = String
+struct PerformanceContext {
+    let performerID: String
+    let instrumentID: String
+    let voice: Int
+}
 ```
 
-### Instrument
-
-Model of an object used by a `Performer` used to _perform_ something.
+## Temporal Context
 
 ```Swift
-typealias InstrumentIdentifier = String
-```
+typealias TemporalInterval <DurationType> = Interval<DurationType>
 
-### Voice
-
-Model of varyingly durational utterances of a single `Instrument`. For example, fugal keyboard material.
-
-```Swift
-typealias VoiceIdentifier = Int
+let durationInterval = TemporalInterval<Duration>(start: a, end: b)
+let metricalDurationInterval = TemporalInterval<MetricalDuration>(start: a, end: b)
 ```
 
 ## Musical Information
@@ -35,7 +28,10 @@ typealias VoiceIdentifier = Int
 A atomic action uttered by a single `Voice`.
 
 ```Swift
-final class Event { ... }
+final class Event <DurationType> { 
+    let performanceContext: PerformanceContext
+    let temporalContext: TemporalContext<DurationType>
+}
 
 // Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
 extension Event: Hashable {
@@ -96,18 +92,13 @@ information["oscMessage"] = Attribution<[OSCMessage]>(...)
 ##### Performance context
 
 ```Swift
-var performanceContext: [AttributeIdentifier: Attribution<Any>] = [:]
-performanceContext["performer"] = Attribution<[PerformerIdentifier]>(...)
-performanceContext["instrument"] = Attribution<[InstrumentIdentifier]>(...)
-performanceContext["voice"] = Attribution<[VoiceIdentifier]>(...)
+let performanceContext: PerformanceContext
 ```
 
 ##### Temporal context
 
 ```Swift
-var temporalContext: [AttributeIdentifier: Attribution<Any>] = [:]
-temporalContext["duration"] = Attribution<[Duration]>(...)
-temporalContext["offsetDuration"] = Attribution<[OffsetDuration]>(...)
+let temporalContext: TemporalInterval(MetricalDuration(2,4), MetricalDuration(5,4))
 ```
 
 #### Putting it together
@@ -116,15 +107,20 @@ We can enter the following:
 
 - "Jill" is playing `Tuba`. 
 - She plays a `middle-c` with a `staccato` articulation at a `pp` dynamic.
+- She plays this from the 2nd 1/4-note-beat to the 5th 1/4-note-beat
 
 as:
 
 ```Swift
 let event = Event()
 
-performanceContext["performer"]![event] = "Jill"
-performanceContext["instrument"]![event] = "Tuba"
-performanceContext["voice"]![event] = 0
+let performanceContext = PerformanceContext(
+    performerID: "Jill",
+    instrumentID: "Tuba",
+    voice: 0
+)
+
+let durationContext = DurationInterval
 
 information["articulation"]![event] = .staccato
 information["pitch"]![event] = [Pitch(noteNumber: 60)]
