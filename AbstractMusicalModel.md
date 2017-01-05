@@ -28,7 +28,7 @@ let metricalDurationInterval = TemporalInterval<MetricalDuration>(start: a, end:
 A atomic action uttered by a single `Voice`.
 
 ```Swift
-class Event <DurationType> { 
+public final class Event <DurationType> { 
     let performanceContext: PerformanceContext
     let temporalContext: TemporalContext<DurationType>
 }
