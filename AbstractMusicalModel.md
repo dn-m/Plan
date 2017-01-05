@@ -102,7 +102,6 @@ performanceContext["instrument"] = Attribution<[InstrumentIdentifier]>(...)
 performanceContext["voice"] = Attribution<[VoiceIdentifier]>(...)
 ```
 
-
 ##### Temporal context
 
 ```Swift
@@ -113,7 +112,12 @@ temporalContext["offsetDuration"] = Attribution<[OffsetDuration]>(...)
 
 #### Putting it together
 
-For example, an event with a staccato middle-c, at 'pp', performed by "Jill", playing `Tuba` could be entered as:
+We can enter the following: 
+
+- "Jill" is playing `Tuba`. 
+- She plays a `middle-c` with a `staccato` articulation at a `pp` dynamic.
+
+as:
 
 ```Swift
 let event = Event()
