@@ -28,10 +28,7 @@ let metricalDurationInterval = TemporalInterval<MetricalDuration>(start: a, end:
 A atomic action uttered by a single `Voice`.
 
 ```Swift
-public final class Event <DurationType> { 
-    let performanceContext: PerformanceContext
-    let temporalContext: TemporalContext<DurationType>
-}
+public final class Event <DurationType> { }
 
 // Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
 extension Event: Hashable {
@@ -92,7 +89,7 @@ information["oscMessage"] = Attribution<[OSCMessage]>(...)
 ##### Performance context
 
 ```Swift
-let performanceContext: PerformanceContext
+var performanceContext: [AttributeIdentifier: Attribution<PerformanceContext>] = [:]
 ```
 
 ##### Temporal context
