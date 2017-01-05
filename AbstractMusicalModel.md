@@ -109,7 +109,7 @@ for event in events {
 
 > Discussion: Is there _any_ way to preserve `Type` of attributes, or must each be deconstructed upon receipt?
 
-A primary concern of the **dn-m** renderer is to displayed filtered versions of a full-score. We can very simply inject this filtration step inside this loop:
+A primary concern of the **dn-m** renderer is to displaye filtered versions of a full-score. We can very simply inject this filtration step inside this loop:
 
 ```Swift
 let attributesToShow: [AttributeIdentifier] = ["pitches", "articulations"]
