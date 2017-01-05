@@ -139,7 +139,7 @@ information["dynamic"]![event] = Dynamic([.p, .p])
 
 ### Database extraction
 
-To reconstruct a given `Event`, we can iterate through the `events` array, and then query each `Attribution` type for the existence of each `Event`.
+To reconstruct a given `Event`, we can iterate through an array of `Event` values, and then query each `Attribution` type for the existence of each `Event`.
 
 ```Swift
 for event in events {
