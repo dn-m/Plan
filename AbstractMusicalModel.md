@@ -2,7 +2,9 @@
 
 A model of music, ignorant of graphical representations.
 
-## Performer
+## Performance Context
+
+### Performer
 
 Model of a human or computer agent.
 
@@ -10,7 +12,7 @@ Model of a human or computer agent.
 typealias PerformerIdentifier = String
 ```
 
-## Instrument
+### Instrument
 
 Model of an object used by a `Performer` used to _perform_ something.
 
@@ -18,7 +20,7 @@ Model of an object used by a `Performer` used to _perform_ something.
 typealias InstrumentIdentifier = String
 ```
 
-## Voice
+### Voice
 
 Model of varyingly durational utterances of a single `Instrument`. For example, fugal keyboard material.
 
@@ -26,7 +28,9 @@ Model of varyingly durational utterances of a single `Instrument`. For example, 
 typealias VoiceIdentifier = Int
 ```
 
-## Event
+## Information
+
+### Event
 
 A atomic action uttered by a single `Voice`.
 
@@ -41,7 +45,7 @@ extension Event: Hashable {
 }
 ```
 
-## Attributes
+### Attributes
 
 An atomic `Event` may be associated with any number of `Attribute` values. 
 
