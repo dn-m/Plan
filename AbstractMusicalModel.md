@@ -173,7 +173,7 @@ for event in events {
         .lazy
         .flatMap { _, attribution in attribution[event] } // filter out non-existent attributions
         .filter { identifier, _ in informationToShow.contains(identifier) }
-        .filter { _, durationSpan in durationSpan.contains(offsetDurations[event])
+        .filter { _, durationSpan in durationSpan.contains(TemporalContext(event))
         .filter { _, performanceContexts in performanceContexts.contains(PerformanceContext(event)) }
     // display only desired attributes
 }
