@@ -40,15 +40,25 @@ extension Event: Hashable {
 
 ### Attributes
 
+#### Atomic
+
 An atomic `Event` may be associated with any number of `Attribute` values. 
 
 ```Swift
 struct Pitch { ... }
 struct Dynamic { ... }
-struct DynamicSpanner { ... }
 struct Articulation { ... }
 struct OSCMessage { ... }
 ...
+```
+
+#### Spanning
+
+A spanning `Attribute` connects two atomic `Event` objects.
+
+```Swift
+struct DynamicSpanner { ... }
+struct TransitionSpanner { ... }
 ```
 
 ## Database
@@ -76,7 +86,7 @@ var attributions: [AttributeIdentifier: Attribution<Any>] = [:]
 
 As the number of possible attributes grows, so too can the number of generated mappings:
 
-##### Musical information
+##### Atomic Attributions
 
 ```Swift
 var information: [AttributeIdentifier: Attribution<Any>] = [:]
@@ -84,6 +94,18 @@ information["pitch"] = Attribution<[Pitch]>(...)
 information["dynamic"] = Attribution<Dynamic>(...)
 information["articulation"] = Attribution<[Articulation]>(...)
 information["oscMessage"] = Attribution<[OSCMessage]>(...)
+```
+
+##### Spanning Attributions
+
+```Swift
+let eventA = Event()
+let eventB = Event()
+let spanner = SpannerType()
+var spanners[eventA] = [..., spanner, ...]
+var spanners[eventB] = [..., spanner, ...]
+spannerStart[spanner] = A
+spannerEnd[spanner] = B
 ```
 
 ##### Performance context
