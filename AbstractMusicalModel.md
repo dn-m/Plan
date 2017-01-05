@@ -1,6 +1,6 @@
 # Abstract Musical Model
 
-A model of music ignorant of graphical representations.
+A model of music, ignorant of graphical representations.
 
 ## Performer
 
