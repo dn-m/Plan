@@ -69,7 +69,7 @@ Each of these relationships is stored in a `Dictionary` with (`Event`, `Attribut
 First, we can partially specialize, and relate these `Dictionary` types as:
 
 ```Swift
-typealias Attribution<Attribute> = Dictionary<Event, Attribute>
+typealias Attribution <Attribute> = Dictionary<Event, Attribute>
 ```
 
 Then, we can store these in a `Dictionary` keyed by an `AttributeIdentfier`, as:
