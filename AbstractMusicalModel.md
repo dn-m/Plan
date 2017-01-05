@@ -28,7 +28,7 @@ let metricalDurationInterval = TemporalInterval<MetricalDuration>(start: a, end:
 A atomic action uttered by a single `Voice`.
 
 ```Swift
-public final class Event <DurationType> { }
+public final class Event { }
 
 // Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
 extension Event: Hashable {
