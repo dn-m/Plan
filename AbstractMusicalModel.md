@@ -79,43 +79,55 @@ typealias AttributeIdentifier = String
 var attributions: [AttributeIdentifier: Attribution<Any>] = [:]
 ```
 
+#### Types of Attributions
+
 As the number of possible attributes grows, so too can the number of generated mappings:
 
-#### Musical information
+##### Musical information
 
 ```Swift
 var information: [AttributeIdentifier: Attribution<Any>] = [:]
-information["pitches"] = Attribution<[Pitch]>(...)
-information["dynamics"] = Attribution<Dynamic>(...)
-information["articulations"] = Attribution<[Articulation]>(...)
-information["oscMessages"] = Attribution<[OSCMessage]>(...)
+information["pitch"] = Attribution<[Pitch]>(...)
+information["dynamic"] = Attribution<Dynamic>(...)
+information["articulation"] = Attribution<[Articulation]>(...)
+information["oscMessage"] = Attribution<[OSCMessage]>(...)
 ```
 
-#### Performance context
+##### Performance context
 
 ```Swift
-var performanceContexts: [AttributeIdentifier: Attribution<Any>] = [:]
-performanceContexts["performers"] = Attribution<[PerformerIdentifier]>(...)
-performanceContexts["instruments"] = Attribution<[InstrumentIdentifier]>(...)
-performanceContexts["voices"] = Attribution<[VoiceIdentifier]>(...)
+var performanceContext: [AttributeIdentifier: Attribution<Any>] = [:]
+performanceContext["performer"] = Attribution<[PerformerIdentifier]>(...)
+performanceContext["instrument"] = Attribution<[InstrumentIdentifier]>(...)
+performanceContext["voice"] = Attribution<[VoiceIdentifier]>(...)
 ```
 
 
-#### Temporal context
+##### Temporal context
 
 ```Swift
 var temporalContexts: [AttributeIdentifier: Attribution<Any>] = [:]
-temporalContexts["duration"] = Attribution<[Duration]>(...)
-temporalContexts["offsetDuration"] = Attribution<[OffsetDuration]>(...)
+temporalContext["duration"] = Attribution<[Duration]>(...)
+temporalContext["offsetDuration"] = Attribution<[OffsetDuration]>(...)
 ```
 
-Finally, we can store all of the `Event` objects in a single `Array` as:
+#### Putting it together
+
+For example, an event with a staccato middle-c, at 'pp', performed by "Jill", playing `Tuba` could be entered as:
 
 ```Swift
-let events: [Event] = [...]
+let event = Event()
+
+performanceContext["performer"]![Event] = "Jill"
+performanceContext["instrument"]![Event] = "Tuba"
+performanceContext["voice"]![Event] = 0
+
+information["articulation"]![Event] = .staccato
+information["pitch"]![Event] = [Pitch(noteNumber: 60)]
+information["dynamic"]![Event] = Dynamic([.p, .p])
 ```
 
-#### Discussion
+### Discussion
 
 - `Spanner` types (slur from `Event a` -> `Event b`)
 - Metrical organization (rhythmical information)
@@ -135,7 +147,7 @@ for event in events {
 A primary concern of the **dn-m** renderer is to display filtered versions of a full-score. We can very simply inject this filtration step inside this loop:
 
 ```Swift
-let informationToShow: [AttributeIdentifier] = ["pitches", "articulations"]
+let informationToShow: [AttributeIdentifier] = ["pitch", "articulation"]
 for event in events {
     let attributes = information
         .lazy
@@ -149,7 +161,7 @@ Further, we can perform more complex filters. For example, given a desired durat
 
 ```Swift
 let durationSpan: DurationSpan = ...
-let informationToShow = ["pitches", "articulations"]
+let informationToShow = ["pitch", "articulation"]
 let performanceContexts = [...]
 for event in events {
     let attributes = information
