@@ -117,7 +117,10 @@ let performanceContext = PerformanceContext(
     voice: 0
 )
 
-let durationContext = DurationInterval
+let durationContext = DurationInterval(
+    start: MetricalDuration(2,4),
+    end: MetricalDuration(5,4)
+)
 
 information["articulation"]![event] = .staccato
 information["pitch"]![event] = [Pitch(noteNumber: 60)]
