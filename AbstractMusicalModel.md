@@ -105,7 +105,7 @@ performanceContext["voice"] = Attribution<[VoiceIdentifier]>(...)
 ##### Temporal context
 
 ```Swift
-var temporalContexts: [AttributeIdentifier: Attribution<Any>] = [:]
+var temporalContext: [AttributeIdentifier: Attribution<Any>] = [:]
 temporalContext["duration"] = Attribution<[Duration]>(...)
 temporalContext["offsetDuration"] = Attribution<[OffsetDuration]>(...)
 ```
