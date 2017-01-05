@@ -77,28 +77,32 @@ var attributions: [AttributeIdentifier: Attribution<Any>] = [:]
 
 As the number of possible attributes grows, so too can the number of generated mappings:
 
-#### Structural information
-
-```Swift
-attributions["performers"] = Attribution<[PerformerIdentifier]>(...)
-attributions["instruments"] = Attribution<[InstrumentIdentifier]>(...)
-attributions["voices"] = Attribution<[VoiceIdentifier]>(...)
-```
-
 #### Musical information
 
 ```Swift
-attributions["pitches"] = Attribution<[Pitch]>(...)
-attributions["dynamics"] = Attribution<Dynamic>(...)
-attributions["articulations"] = Attribution<[Articulation]>(...)
-attributions["oscMessages"] = Attribution<[OSCMessage]>(...)
+var information: [AttributeIdentifier: Attribution<Any>] = [:]
+information["pitches"] = Attribution<[Pitch]>(...)
+information["dynamics"] = Attribution<Dynamic>(...)
+information["articulations"] = Attribution<[Articulation]>(...)
+information["oscMessages"] = Attribution<[OSCMessage]>(...)
 ```
 
-#### Temporal information
+#### Performance context
 
 ```Swift
-attributions["duration"] = Attribution<[Duration]>(...)
-attributions["offsetDuration"] = Attribution<[OffsetDuration]>(...)
+var performanceContexts: [AttributeIdentifier: Attribution<Any>] = [:]
+performanceContexts["performers"] = Attribution<[PerformerIdentifier]>(...)
+performanceContexts["instruments"] = Attribution<[InstrumentIdentifier]>(...)
+performanceContexts["voices"] = Attribution<[VoiceIdentifier]>(...)
+```
+
+
+#### Temporal context
+
+```Swift
+var temporalContexts: [AttributeIdentifier: Attribution<Any>] = [:]
+temporalContexts["duration"] = Attribution<[Duration]>(...)
+temporalContexts["offsetDuration"] = Attribution<[OffsetDuration]>(...)
 ```
 
 Finally, we can store all of the `Event` objects in a single `Array` as:
@@ -119,7 +123,7 @@ To reconstruct a given `Event`, we can iterate through the `events` array, and t
 
 ```Swift
 for event in events {
-    let attributes: [Any] = attributions.flatMap { _, attribution in attribution[event] }
+    let attributes: [Any] = information.flatMap { _, attribution in attribution[event] }
     // display attributes
 }
 ```
@@ -127,23 +131,34 @@ for event in events {
 A primary concern of the **dn-m** renderer is to display filtered versions of a full-score. We can very simply inject this filtration step inside this loop:
 
 ```Swift
-let attributesToShow: [AttributeIdentifier] = ["pitches", "articulations"]
+let informationToShow: [AttributeIdentifier] = ["pitches", "articulations"]
 for event in events {
-    let attributes = attributions
+    let attributes = information
         .lazy
-        .filter { identifier, _ in attributesToShow.contains(identifier) }
         .flatMap { _, attribution in attribution[event] }
+        .filter { identifier, _ in informationToShow.contains(identifier) }
     // display only desired attributes
 }
 ```
 
-Further, we can perform more complex filters:
+Further, we can perform more complex filters. For example, given a desired durational span, performance context, as well as the informational constraints, show only applicable information.
 
 ```Swift
-let timeSpanRange
+let durationSpan: DurationSpan = ...
+let informationToShow = ["pitches", "articulations"]
+let performanceContexts = [...]
+for event in events {
+    let attributes = information
+        .lazy
+        .flatMap { _, attribution in attribution[event] } // filter out non-existent attributions
+        .filter { identifier, _ in informationToShow.contains(identifier) }
+        .filter { _, durationSpan in durationSpan.container(offsetDurations[event])
+        .filter { _, performanceContexts in performanceContexts.contains(PerformanceContext(event)) }
+    // display only desired attributes
+}
 ```
-
 
 #### Discussion:
 
 - Is there _any_ way to preserve `Type` of attributes, or must each be deconstructed upon receipt?
+- At some point, a diffing algorithm may be helpful in the updating of the graphics.
