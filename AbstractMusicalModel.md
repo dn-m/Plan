@@ -28,7 +28,7 @@ Model of varyingly durational utterances of a single `Instrument`. For example, 
 typealias VoiceIdentifier = Int
 ```
 
-## Information
+## Musical Information
 
 ### Event
 
