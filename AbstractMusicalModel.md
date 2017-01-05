@@ -2,14 +2,51 @@
 
 A model of music with ignorant of graphical representations.
 
-```Swift
-final class Event {
-	
-	// Any collection of musical elements (`Pitch`, `Dynamic`, `Articulation`, `OSCMessage`, etc.)
-	let elements: [Any]
+## Performer
 
-	// Performer -> Instrument -> Voice
-	let identifierPath: [IdentifierPath]
+```Swift
+typealias PerformerIdentifier = String
+```
+
+## Instrument
+
+```Swift
+typealias InstrumentIdentifier = String
+```
+
+## Voice
+
+```Swift
+typealias VoiceIdentifier = Int
+```
+
+## Elements
+
+```Swift
+struct Pitch { }
+struct Dynamic { }
+struct DynamicSpanner { }
+struct Articulation { }
+struct OSCMessage { }
+...
+```
+
+> Discussion: `Spanner` types, metrical organization…
+
+## Event
+
+A singular event, performed
+
+- within a single `Voice`
+- with a single `Instrument`
+- by a single `Performer`
+- for a given `Duration` 
+
+> Discussion: How to store `Duration` vs `MetricalDuration`…
+
+```Swift
+final class Event { 
+    let duration: Duration
 }
 
 // Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
@@ -18,28 +55,66 @@ extension Event: Hashable {
 		return ObjectIdentifier(self).hashValue
 	}
 }
+```
 
-final class MetricalEventTree {
-	
-	// Performer -> Instrument -> Voice
-	let identifierPath: [IdentifierPath]
+## Database
 
-	// Internal representation of rhythm
-	private let rhythmTree: RhythmTree<Event>
+An atomic `Event` may be associated with any number of `Attribute` values. 
+
+### Database generation
+
+Each of these relationships is stored in a `Dictionary` with (`Event`, `Attribute`) as a `(key, value)` pair. 
+
+First, we can partially specialize, and relate these `Dictionary` types as:
+
+```Swift
+typealias Attribution<Attribute> = Dictionary<Event, Attribute>
+```
+
+Then, we can store these in a `Dictionary` keyed by an `AttributeIdentfier`, as:
+
+```Swift
+typealias AttributeIdentifier = String
+var attributions: [AttributeIdentifier: Attribution<Any>] = [:]
+```
+
+As the number of possible attributes grows, so too can the number of generated mappings.
+
+```Swift
+attributions["pitches"] = Attribution<[Pitch]>(),
+attributions["dynamics"] = Attribution<Dynamic>(),
+attributions["articulations"] = Attribution<[Articulation]>(),
+attributions["oscMessages"] = Attribution<[OSCMessage]>()
+```
+
+Finally, we can store all of the `Event` objects in a single `Array` as:
+
+```Swift
+let events: [Event] = [...]
+```
+
+### Database extraction
+
+To reconstruct a given `Event`, we can iterate through the `events` array, and then query each `Attribution` type for the existence of each `Event`.
+
+```Swift
+for event in events {
+    let attributes: [Any] = attributions.flatMap { _, attribution in attribution[event] }
+    // display attributes
 }
+```
 
+> Discussion: Is there _any_ way to preserve `Type` of attributes, or must each be deconstructed upon receipt?
 
-final class AbstractMusicModel {
+A primary concern of the **dn-m** renderer is to displayed filtered versions of a full-score. We can very simply inject this filtration step inside this loop:
 
-	// Model of measures, etc.
-	let structure: [Structure]
-
-	// Rhythmical representations of `Event` objects
-	let rhythms: [RhythmTree<Event>]
-
-	let articulations: [Event: Articulation]
-	let dynamics: [Event: Dynamic]
-	let spanners: [Event: (SpannerType, Event)] // ?
-	// etc...
+```Swift
+let attributesToShow: [AttributeIdentifier] = ["pitches", "articulations"]
+for event in events {
+    let attributes = attributions
+        .lazy
+        .filter { identifier, _ in attributesToShow.contains(identifier) }
+        .flatMap { _, attribution in attribution[event] }
+    // display only desired attributes
 }
 ```
