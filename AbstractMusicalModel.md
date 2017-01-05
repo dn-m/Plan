@@ -58,8 +58,6 @@ struct OSCMessage { }
 ...
 ```
 
-> Discussion: `Spanner` types, metrical organization…
-
 ## Database
 
 In order to relate `Attribute` values to `Event` objects, we generate a database, comprised of many `Dictionary` values.
@@ -89,6 +87,8 @@ attributions["dynamics"] = Attribution<Dynamic>(...)
 attributions["articulations"] = Attribution<[Articulation]>(...)
 attributions["oscMessages"] = Attribution<[OSCMessage]>(...)
 ```
+
+> Discussion: `Spanner` types, metrical organization…
 
 Finally, we can store all of the `Event` objects in a single `Array` as:
 
