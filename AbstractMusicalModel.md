@@ -122,13 +122,13 @@ as:
 ```Swift
 let event = Event()
 
-performanceContext["performer"]![Event] = "Jill"
-performanceContext["instrument"]![Event] = "Tuba"
-performanceContext["voice"]![Event] = 0
+performanceContext["performer"]![event] = "Jill"
+performanceContext["instrument"]![event] = "Tuba"
+performanceContext["voice"]![event] = 0
 
-information["articulation"]![Event] = .staccato
-information["pitch"]![Event] = [Pitch(noteNumber: 60)]
-information["dynamic"]![Event] = Dynamic([.p, .p])
+information["articulation"]![event] = .staccato
+information["pitch"]![event] = [Pitch(noteNumber: 60)]
+information["dynamic"]![event] = Dynamic([.p, .p])
 ```
 
 #### Discussion
