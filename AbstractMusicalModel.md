@@ -131,7 +131,7 @@ information["pitch"]![Event] = [Pitch(noteNumber: 60)]
 information["dynamic"]![Event] = Dynamic([.p, .p])
 ```
 
-### Discussion
+#### Discussion
 
 - `Spanner` types (slur from `Event a` -> `Event b`)
 - Metrical organization (rhythmical information)
