@@ -31,7 +31,7 @@ typealias VoiceIdentifier = Int
 A atomic action uttered by a single `Voice`.
 
 ```Swift
-final class Event { }
+final class Event { ... }
 
 // Ensure that an `Event` can be used as a `Key` value in a `Dictionary`.
 extension Event: Hashable {
@@ -46,11 +46,11 @@ extension Event: Hashable {
 An atomic `Event` may be associated with any number of `Attribute` values. 
 
 ```Swift
-struct Pitch { }
-struct Dynamic { }
-struct DynamicSpanner { }
-struct Articulation { }
-struct OSCMessage { }
+struct Pitch { ... }
+struct Dynamic { ... }
+struct DynamicSpanner { ... }
+struct Articulation { ... }
+struct OSCMessage { ... }
 ...
 ```
 
