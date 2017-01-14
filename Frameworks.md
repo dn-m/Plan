@@ -4,6 +4,7 @@
 ## User Interface / Elements
 - `Timeline`
 - `OSC`
+- `ProgressBar`
 
 ## Score View Layer
 - `PlotView`
