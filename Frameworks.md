@@ -3,14 +3,19 @@
 
 ## User Interface / Elements
 - `Timeline`
+- `OSC`
 
 ## Score View Layer
 - `PlotView`
 - `ScoreView`
+- `PathTools`
+- `GraphicsTools`
 
 ## Score Model Layer
 - `PlotModel`
 - `StaffModel`
+- `PitchSpellingTools`
+- `MusicXML`
 
 ## Abstract Musical Model Layer
 - `Pitch`
@@ -19,6 +24,6 @@
 - `Articulations`
 
 ## Utility Layer
-  - `Collections`
-  - `ArithmeticTools`
-  - `IntervalTools`
+- `Collections`
+- `ArithmeticTools`
+- `IntervalTools`
