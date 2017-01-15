@@ -14,7 +14,7 @@ The frameworks of this layer contain their source, and demo targets for graphica
 The frameworks of this layer contain their source, and demo targets for graphical confirmation.
 
 - `PlotView`
-- `ScoreView`
+- `StaffView`
 - `PathTools`
 - `GraphicsTools`
 
