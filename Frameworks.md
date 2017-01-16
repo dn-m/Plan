@@ -87,4 +87,4 @@ The frameworks of this layer contain their source and a set of unit tests.
 ### Destroy
 - [x] `CopyTools`: Destroy
 - [ ] `Plot`: Destroy
-- [ ] `ColorMode`: Destroy
+- [x] `ColorMode`: Destroy
