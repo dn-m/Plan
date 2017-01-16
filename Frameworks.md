@@ -67,16 +67,16 @@ The frameworks of this layer contain their source and a set of unit tests.
 
 ### Migrate contents
 
-- `TreeTools`: Migrate to `Collections`, destroy
-- `StringTools`: Migrate to `Collections`, destroy
-- `Color`: Migrate to `GraphicsTools`, destroy
-- `Duration`: Migrate to `Rhythm`, **do not destroy**
-- `ColorMode`: Migrate to `GraphicsTools`
-- `Graph`: Migrate to `Plot` / `PlotView`
-- `GraphStructures`: Migrate to `Collections`
-- `LayoutTools`: Migrate to `GraphicsTools`
-- `Staff`: Split into `StaffModel` / `StaffView`, destroy
-- `DocumentationTools`: Migrate to `Helper`
+- [ ] `TreeTools`: Migrate to `Collections`, destroy
+- [ ] `StringTools`: Migrate to `Collections`, destroy
+- [ ] `Color`: Migrate to `GraphicsTools`, destroy
+- [ ] `Duration`: Migrate to `Rhythm`, **do not destroy**
+- [ ] `ColorMode`: Migrate to `GraphicsTools`
+- [ ] `Graph`: Migrate to `Plot` / `PlotView`
+- [ ] `GraphStructures`: Migrate to `Collections`
+- [ ] `LayoutTools`: Migrate to `GraphicsTools`
+- [ ] `Staff`: Split into `StaffModel` / `StaffView`, destroy
+- [ ] `DocumentationTools`: Migrate to `Helper`
 
 ### Move to Archive
 
