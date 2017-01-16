@@ -65,19 +65,26 @@ The frameworks of this layer contain their source and a set of unit tests.
 
 ## Frameworks needing management
 
+### Migrate contents
+
 - `TreeTools`: Migrate to `Collections`, destroy
-- `Plot`: Destroy
 - `StringTools`: Migrate to `Collections`, destroy
 - `Color`: Migrate to `GraphicsTools`, destroy
 - `Duration`: Migrate to `Rhythm`, **do not destroy**
-- `ScriptingTools`: Move to `Archive`
-- `DirectionTools`: Move to `Archive` (or destroy)
 - `ColorMode`: Migrate to `GraphicsTools`
-- `FrameworkTools`: Move to `Archive`
 - `Graph`: Migrate to `Plot` / `PlotView`
 - `GraphStructures`: Migrate to `Collections`
-- `CopyTools`: Destroy
 - `LayoutTools`: Migrate to `GraphicsTools`
 - `Staff`: Split into `StaffModel` / `StaffView`, destroy
 - `DocumentationTools`: Migrate to `Helper`
-- `300-19`: Move to `Archive`.
+
+### Move to Archive
+
+- [x] `300-19`: Move to `Archive`.
+- [x] `FrameworkTools`: Move to `Archive`
+- [x] `ScriptingTools`: Move to `Archive`
+- [x] `DirectionTools`: Move to `Archive` (or destroy)
+
+### Destroy
+- [ ] `CopyTools`: Destroy
+- [ ] `Plot`: Destroy
