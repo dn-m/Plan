@@ -71,7 +71,6 @@ The frameworks of this layer contain their source and a set of unit tests.
 - [ ] `StringTools`: Migrate to `Collections`, destroy
 - [ ] `Color`: Migrate to `GraphicsTools`, destroy
 - [ ] `Duration`: Migrate to `Rhythm`, **do not destroy**
-- [ ] `ColorMode`: Migrate to `GraphicsTools`
 - [ ] `Graph`: Migrate to `Plot` / `PlotView`
 - [ ] `GraphStructures`: Migrate to `Collections`
 - [ ] `LayoutTools`: Migrate to `GraphicsTools`
@@ -88,3 +87,4 @@ The frameworks of this layer contain their source and a set of unit tests.
 ### Destroy
 - [x] `CopyTools`: Destroy
 - [ ] `Plot`: Destroy
+- [ ] `ColorMode`: Destroy
