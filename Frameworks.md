@@ -1,7 +1,9 @@
 
 ## Application Layer
 
-## User Interface / Elements
+`...`
+
+## User Interface Elements
 
 The frameworks of this layer contain their source, and demo targets for graphical confirmation.
 
@@ -15,6 +17,10 @@ The frameworks of this layer contain their source, and demo targets for graphica
 
 - `PlotView`
 - `StaffView`
+`...`
+
+## Graphics Utilities
+
 - `PathTools`
 - `GraphicsTools`
 
