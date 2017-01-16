@@ -86,5 +86,5 @@ The frameworks of this layer contain their source and a set of unit tests.
 - [x] `DirectionTools`: Move to `Archive` (or destroy)
 
 ### Destroy
-- [ ] `CopyTools`: Destroy
+- [x] `CopyTools`: Destroy
 - [ ] `Plot`: Destroy
