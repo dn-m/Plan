@@ -85,7 +85,7 @@ The frameworks of this layer contain their source and a set of unit tests.
 - [x] `Graph`: Migrate to `Plot` / `PlotView`
 - [x] `GraphStructures`: Migrate to `Collections`
 - [x] `LayoutTools`: Migrate to `GraphicsTools`
-- [ ] `Staff`: Split into `StaffModel` / `StaffView`, destroy
+- [x] `Staff`: Split into `StaffModel` / `StaffView`, destroy
 - [ ] `DocumentationTools`: Migrate to `Helper`
 
 ### Move to Archive
@@ -97,5 +97,5 @@ The frameworks of this layer contain their source and a set of unit tests.
 
 ### Destroy
 - [x] `CopyTools`: Destroy
-- [ ] `Plot`: Destroy
+- [x] `Plot`: Destroy
 - [x] `ColorMode`: Destroy
