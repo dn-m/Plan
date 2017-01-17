@@ -22,6 +22,7 @@ The frameworks of this layer contain their source, and demo targets for graphica
 
 The frameworks of this layer contain their source, and demo targets for graphical confirmation.
 
+- `ScoreViewLayer`
 - `PlotView`
 - `StaffView`
 
@@ -36,6 +37,7 @@ The frameworks of this layer contain their source, and demo targets for graphica
 
 The frameworks of this layer contain their source and a set of unit tests.
 
+- `ScoreModelLayer`
 - `PlotModel`
 - `StaffModel`
 - `PitchSpellingTools`
@@ -49,6 +51,7 @@ The frameworks of this layer contain their source and a set of unit tests.
 
 The frameworks of this layer contain their source and a set of unit tests.
 
+- `AbstractMusicalModel`
 - `Pitch`
 - `Rhythm`
 - `Dynamics`
