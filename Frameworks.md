@@ -1,6 +1,6 @@
 # Organizational Layers
 
-![Frameworks](img/Frameworks.png)
+![Frameworks](img/Frameworks_high_level.png)
 
 ### Application Layer
 
