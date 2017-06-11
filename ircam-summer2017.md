@@ -12,20 +12,19 @@
   
 ## Thursday, June 1 — Sunday, June 4: Starting up
 - [x] Verify state of full stack: `AbstractMusicalModel` -> `ScoreModel` -> `ScoreViewModel`
-- [ ] Create test suite for pitch representation (melodic, harmonic)
-- [ ] Create test suite for structure representation (barlines, measure flowing)
-- [ ] Extend `YAML` psuedo-score:
-  - Meters
+- [x] Implement basic geometrical / algebraic algorithms / structures for graphics
 
-## Monday, June 5 — Sunday, June 11: Rhythm
+## Monday, June 12 — Sunday, June 18: Rhythm
+- [ ] Create score model with arbitrary measures
+- [ ] Flow a score representation with arbitrary measures
+- [ ] Deploy basic staff representation in score representation context
 - [ ] Implement Rhythm representation
   - `RhythmSpellingTools`
 - [ ] Create test suite for rhythm representation (non-tuplet rhythms, ties)
-- [ ] Make contact with `qparse`
-- [ ] Extend `YAML` psuedo-score:
-  - Rhythm
+- [ ] If lucky: make contact with `qparse`
 
 ## Monday, June 12 — Sunday, June 18: Tablatures
+- [ ] Develop model for tablature objects (clefs, objects, spanners)
 - [ ] Implement tablature models
 - [ ] Implement basic label models (shapes, text)
 - [ ] Implement layout
@@ -45,10 +44,10 @@
 - [ ] Look at other interfaces
 
 ## Monday, July 17 — Sunday, July 23:
-
+- TBD
 
 ## Monday, July 24 — Sunday, July 30:
-
+- TBD
 
 ## Monday, July 31 — Sunday, July 16:
-  
+- TBD
