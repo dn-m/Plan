@@ -10,7 +10,7 @@
   
 ## Schedule
   
-## Thursday, June 1 — Sunday, June 4: Starting up
+## Thursday, June 1 — Sunday, June 11: Starting up
 - [x] Verify state of full stack: `AbstractMusicalModel` -> `ScoreModel` -> `ScoreViewModel`
 - [x] Implement basic geometrical / algebraic algorithms / structures for graphics
 
