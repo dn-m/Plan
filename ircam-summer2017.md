@@ -23,28 +23,25 @@
 - [ ] Create test suite for rhythm representation (non-tuplet rhythms, ties)
 - [ ] If lucky: make contact with `qparse`
 
-## Monday, June 12 — Sunday, June 18: Tablatures
+## Monday, June 19 — Sunday, June 25: Tablatures
 - [ ] Develop model for tablature objects (clefs, objects, spanners)
 - [ ] Implement tablature models
 - [ ] Implement basic label models (shapes, text)
 - [ ] Implement layout
 - [ ] Create test suite for tablatures, markup, layout
 
-## Monday, June 19 — Sunday, June 25: Interconnectivity, Timing
+## Monday, June 26 — Sunday, July 2: Interconnectivity, Timing
 - [ ] Run-through basic score via Antescofo / OSC
 
-## Monday, June 26 — Sunday, July 2: Spanners
+## Monday, June 3 — Sunday, July 9: Spanners
 - [ ] Implement slurs, dynamic hairpins, tablature spanners
 
-## Monday, July 3 — Sunday, July 9: Configurability
+## Monday, July 10 — Sunday, July 16: Configurability
 - [ ] Use `YAML` for configuration
 
-## Monday, July 10 — Sunday, July 16:
+## Monday, July 17 — Sunday, July 23:
 - [ ] Extend Musical model
 - [ ] Look at other interfaces
-
-## Monday, July 17 — Sunday, July 23:
-- TBD
 
 ## Monday, July 24 — Sunday, July 30:
 - TBD
