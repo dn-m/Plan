@@ -17,7 +17,7 @@
 ## Monday, June 12 — Sunday, June 18: Rhythm
 - [ ] [Inject `Meter.Structure` into `AbstractMusicalModel`](https://github.com/dn-m/AbstractMusicalModel/issues/14)
 - [ ] Create score model with arbitrary measures
-- [ ] Flow a score representation with arbitrary measures
+- [ ] [Flow a score representation with arbitrary measures](https://github.com/dn-m/ScoreViewLayer/issues/1)
 - [ ] Deploy basic staff representation in score representation context
 - [ ] Implement Rhythm representation
   - `RhythmSpellingTools`
