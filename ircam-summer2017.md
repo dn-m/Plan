@@ -15,6 +15,7 @@
 - [x] Implement basic geometrical / algebraic algorithms / structures for graphics
 
 ## Monday, June 12 — Sunday, June 18: Rhythm
+- [ ] [Inject `Meter.Structure` into `AbstractMusicalModel`](https://github.com/dn-m/AbstractMusicalModel/issues/14)
 - [ ] Create score model with arbitrary measures
 - [ ] Flow a score representation with arbitrary measures
 - [ ] Deploy basic staff representation in score representation context
