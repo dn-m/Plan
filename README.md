@@ -26,4 +26,4 @@ Repository for planning the development of the **dn-m** project.
 
 ## Development
 
-See the [achitecture](Architecture.md) plan.
+See the [architecture](Architecture.md) plan.
