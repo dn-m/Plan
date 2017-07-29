@@ -1,5 +1,7 @@
 # SwiftPM Migration
 
+This document outlines the process of migrating code from a Carthage-driven workflow, to one driven by Swift Package Manager.
+
 ## Structure
 - Algebra
 - (...) Data structures
