@@ -12,12 +12,12 @@
 - Algorithms: `Discuss`
 
 ## Math
-- Arithmetic, previously: ArithmeticTools
-- Geometry, previously: GeometryTools
+- Arithmetic `previously: ArithmeticTools`
+- Geometry `previously: GeometryTools`
 
 ## Graphics
-- Path, previously: PathTools
-- Styling: `Discuss name`, previously: GraphicsTools
+- Path `previously: PathTools`
+- Styling: `Discuss name, previously: GraphicsTools`
 
 ## MusicModel
 - Articulations
