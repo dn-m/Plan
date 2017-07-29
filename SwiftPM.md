@@ -28,7 +28,7 @@
 ## ScoreModel
 - PlotModel
 - StaffModel
-...
+- ...
 
 ## ScoreView
 - PlotView
