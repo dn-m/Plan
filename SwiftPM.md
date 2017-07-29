@@ -1,6 +1,6 @@
 # SwiftPM Migration
 
-## Structure, previously Collections, Alegebra
+## Structure
 - Algebra
 - (...) Data structures
 - Destructure
