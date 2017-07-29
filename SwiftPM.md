@@ -26,6 +26,8 @@
 - Rhythm
 
 ## ScoreModel
+- SpelledRhythm
+- SpelledPitch
 - PlotModel
 - StaffModel
 - ...
