@@ -19,6 +19,7 @@ This document outlines the process of migrating code from a Carthage-driven work
   - Scaling
   - GCDDomain
   - Quadratic
+  - Ranges
   - ...
 - Geometry `previously: GeometryTools`
 
