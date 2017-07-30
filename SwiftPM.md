@@ -14,7 +14,12 @@ This document outlines the process of migrating code from a Carthage-driven work
 - Algorithms: `Discuss`
 
 ## Math
-- Arithmetic `previously: ArithmeticTools`
+- Arithmetic `previously: ArithmeticTools, break into the following:`
+  - Rational
+  - Scaling
+  - GCDDomain
+  - Quadratic
+  - ...
 - Geometry `previously: GeometryTools`
 
 ## Graphics
