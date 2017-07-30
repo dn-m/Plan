@@ -20,6 +20,7 @@ This document outlines the process of migrating code from a Carthage-driven work
 ## Graphics
 - Path `previously: PathTools`
 - Styling: `Discuss name, previously: GraphicsTools`
+- QuartzAdapter
 
 ## MusicModel
 - Articulations
