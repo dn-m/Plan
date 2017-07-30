@@ -30,12 +30,18 @@ This document outlines the process of migrating code from a Carthage-driven work
 - Yet unorganized:
   - `BidirectionalCollection<SignedNumber>.closest(to:)`
   - `closer<SignedNumber>(to:a:b:)`
-  - `ordered<Comparable>(_:_:)`
+  - `ordered<Comparable>(_:_:)`: `Move to dn-m/Structure`
   - `mean<FloatingPoint>(_:_:)`
+  - `BidirectionalCollection<Numeric & Additive>.mean`
   - `mod<BinaryInteger>(_:)`
   - `mod<FloatingPoint>(_:)`
-  - `BidirectionalCollection<Numeric & Additive>.mean`
   - `IntegerExtensions` (`isEven`, `isOdd`, `isPrime`, `isPowerOfTwo`, `divisible(by:)`)
+- Consider:
+  - Factorization:
+    - `GCDDomain`
+    - `mod<BinaryInteger>(_:)`
+    - `mod<FloatingPoint>(_:)`
+    - `isPrime`
 - Geometry `previously: GeometryTools`
 
 ## Graphics
