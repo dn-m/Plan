@@ -20,7 +20,22 @@ This document outlines the process of migrating code from a Carthage-driven work
   - GCDDomain
   - Quadratic
   - Ranges
+  - LinearRegression
+  - Power
+  - Random
+  - StringFormatting `Discuss: name`
+  - Vector2 (move to `Geometry`?)
   - ...
+  
+- Yet unorganized:
+  - `BidirectionalCollection<SignedNumber>.closest(to:)`
+  - `closer<SignedNumber>(to:a:b:)`
+  - `ordered<Comparable>(_:_:)`
+  - `mean<FloatingPoint>(_:_:)`
+  - `mod<BinaryInteger>(_:)`
+  - `mod<FloatingPoint>(_:)`
+  - `BidirectionalCollection<Numeric & Additive>.mean`
+  - `IntegerExtensions` (`isEven`, `isOdd`, `isPrime`, `isPowerOfTwo`, `divisible(by:)`)
 - Geometry `previously: GeometryTools`
 
 ## Graphics
