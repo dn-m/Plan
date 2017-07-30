@@ -8,9 +8,9 @@ This document outlines the process of migrating code from a Carthage-driven work
 - Destructure
 - StructureWrapping
 - DictionaryProtocol
+- SumType
 - Predicates: `Discuss`
 - PatternMatching: `Discuss`
-- EnumExtensions: `Discuss`
 - Algorithms: `Discuss`
 
 ## Math
