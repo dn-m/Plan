@@ -1,3 +1,6 @@
-| music-notation-core | dn-m | notes |
+| music-notation-core | dn-m | integration notes |
 | --------------------|------|-------|
-| 
+| [`Interval`](https://github.com/drumnkyle/music-notation-core/blob/master/Sources/Interval.swift#L40-L65) | [`NamedOrderedInterval`](https://github.com/dn-m/NotationModel/blob/master/Sources/SpelledPitch/NamedOrderedInterval.swift) / [`NamedUnorderedInterval`](https://github.com/dn-m/NotationModel/blob/master/Sources/SpelledPitch/NamedUnorderedInterval.swift) | Depends on: <br/>- [`dn-m/Structure/Algorithms`](https://github.com/dn-m/Structure/tree/master/Sources/Algorithms) <br/>-[`dn-m/Math/Math`](https://github.com/dn-m/Math/tree/master/Sources/Math) <br/>-[`dn-m/Music/Pitch`](https://github.com/dn-m/Music/tree/master/Sources/Pitch) |
+| [`IntervalQuality`](https://github.com/dn-m/Music/tree/master/Sources/Pitch) | [`NamedIntervalQuality`](https://github.com/dn-m/NotationModel/blob/master/Sources/SpelledPitch/NamedIntervalQuality.swift) | Depends on: <br/>-[`dn-m/Structure/DataStructures`](https://github.com/dn-m/Structure/tree/master/Sources/DataStructures) |
+| [`Tone`](https://github.com/drumnkyle/music-notation-core/blob/master/Sources/Tone.swift#L9-L20) | [`SpelledPitch`](https://github.com/dn-m/NotationModel/blob/master/Sources/SpelledPitch/SpelledPitch.swift) | Depends on: <br/>-[`dn-m/Music/Pitch`](https://github.com/dn-m/Music/tree/master/Sources/Pitch) |
+| [`Accidental`](https://github.com/drumnkyle/music-notation-core/blob/master/Sources/Types.swift#L28-L34) | [`Accidental`](https://github.com/dn-m/NotationModel/blob/master/Sources/StaffModel/Accidental.swift) | Depends on: <br/>-[`dn-m/NotationModel/SpelledPitch`](https://github.com/dn-m/NotationModel/tree/master/Sources/SpelledPitch) |
